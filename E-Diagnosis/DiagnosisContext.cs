@@ -11,8 +11,8 @@ namespace E_Diagnosis
 
     public enum Category
     {
-        中药,
         中成药与西药,
+        中药,
     }
 
     //public enum FeeType
@@ -165,6 +165,11 @@ namespace E_Diagnosis
 
     public class Record
     {
+        public Record()
+        {
+            this.wprescription = new Prescription();
+            this.cprescription = new Prescription();
+        }
         public int id { get; set; }
         public virtual Patient patient { get; set; }
         public string 类型 { get; set; }
@@ -197,11 +202,7 @@ namespace E_Diagnosis
         public string 审核 { get; set; }
         public string 核对 { get; set; }
         public string 发药 { get; set; }
-        public int wid { get; set; }
-        public int cid { get; set; }
-        [ForeignKey("wid")]
         public virtual Prescription wprescription { get; set; }
-        [ForeignKey("cid")]
         public virtual Prescription cprescription { get; set; }
     }
 
@@ -210,10 +211,12 @@ namespace E_Diagnosis
         public Prescription()
         {
             this.items = new List<Item>();
+            this.amount = 1;
         }
         public int id { get; set; }
+        public Record record { get; set; }
         public bool istemplate { get; set; }
-        public int count { get; set; }
+        public int amount { get; set; }
         public decimal price { get; set; }
         public virtual ICollection<Item> items { get; set; }
     }
@@ -221,10 +224,11 @@ namespace E_Diagnosis
     public class Item
     {
         public int id { get; set; }
-        public string 名称 { get; set; }
-        public decimal 数量 { get; set; }
         public virtual Prescription prescription { get; set; }
-        public virtual Medicine medicine { get; set; }
+        public string 名称 { get; set; }
+        public decimal 单价 { get; set; }
+        public decimal 数量 { get; set; }
+        public decimal 小计 { get; set; }
     }
 
     public class DiagnosisContext:DbContext

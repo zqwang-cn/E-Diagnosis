@@ -133,16 +133,17 @@
             this.textBox26 = new System.Windows.Forms.TextBox();
             this.label42 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
-            this.label43 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.label46 = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.button12 = new System.Windows.Forms.Button();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label48 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -1300,6 +1301,7 @@
             this.tableLayoutPanel3.Controls.Add(this.label47, 8, 8);
             this.tableLayoutPanel3.Controls.Add(this.label43, 0, 8);
             this.tableLayoutPanel3.Controls.Add(this.label46, 2, 8);
+            this.tableLayoutPanel3.Controls.Add(this.label48, 10, 1);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 10;
@@ -1411,22 +1413,22 @@
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.AutoSize = true;
             this.tableLayoutPanel3.SetColumnSpan(this.label12, 4);
-            this.label12.Location = new System.Drawing.Point(147, 21);
+            this.label12.Location = new System.Drawing.Point(123, 21);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(53, 12);
+            this.label12.Size = new System.Drawing.Size(101, 12);
             this.label12.TabIndex = 9;
-            this.label12.Text = "中药处方";
+            this.label12.Text = "西药与中成药处方";
             // 
             // label13
             // 
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label13.AutoSize = true;
             this.tableLayoutPanel3.SetColumnSpan(this.label13, 4);
-            this.label13.Location = new System.Drawing.Point(537, 21);
+            this.label13.Location = new System.Drawing.Point(543, 21);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(65, 12);
+            this.label13.Size = new System.Drawing.Size(53, 12);
             this.label13.TabIndex = 10;
-            this.label13.Text = "中成药处方";
+            this.label13.Text = "中药处方";
             // 
             // label14
             // 
@@ -1538,17 +1540,7 @@
             this.button7.TabIndex = 22;
             this.button7.Text = "保存";
             this.button7.UseVisualStyleBackColor = true;
-            // 
-            // label43
-            // 
-            this.label43.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label43.AutoSize = true;
-            this.tableLayoutPanel3.SetColumnSpan(this.label43, 2);
-            this.label43.Location = new System.Drawing.Point(66, 461);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(41, 12);
-            this.label43.TabIndex = 23;
-            this.label43.Text = "金额：";
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // label44
             // 
@@ -1588,6 +1580,28 @@
             0,
             0,
             0});
+            this.numericUpDown3.ValueChanged += new System.EventHandler(this.numericUpDown3_ValueChanged);
+            // 
+            // label47
+            // 
+            this.label47.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(689, 461);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(23, 12);
+            this.label47.TabIndex = 28;
+            this.label47.Text = "0元";
+            // 
+            // label43
+            // 
+            this.label43.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label43.AutoSize = true;
+            this.tableLayoutPanel3.SetColumnSpan(this.label43, 2);
+            this.label43.Location = new System.Drawing.Point(66, 461);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(41, 12);
+            this.label43.TabIndex = 23;
+            this.label43.Text = "金额：";
             // 
             // label46
             // 
@@ -1599,16 +1613,6 @@
             this.label46.Size = new System.Drawing.Size(23, 12);
             this.label46.TabIndex = 27;
             this.label46.Text = "0元";
-            // 
-            // label47
-            // 
-            this.label47.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(689, 461);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(23, 12);
-            this.label47.TabIndex = 28;
-            this.label47.Text = "0元";
             // 
             // tabPage4
             // 
@@ -1643,6 +1647,16 @@
             // patientBindingSource
             // 
             this.patientBindingSource.DataSource = typeof(E_Diagnosis.Patient);
+            // 
+            // label48
+            // 
+            this.label48.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(869, 76);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(41, 12);
+            this.label48.TabIndex = 29;
+            this.label48.Text = "0.00元";
             // 
             // MainForm
             // 
@@ -1799,6 +1813,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDown3;
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label label48;
     }
 }
 
