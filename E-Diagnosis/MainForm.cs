@@ -70,8 +70,6 @@ namespace E_Diagnosis
 
         private void set_prescription_editable(bool editable)
         {
-            dataGridView3.Enabled = editable;
-            dataGridView4.Enabled = editable;
             button3.Enabled = editable;
             button4.Enabled = editable;
             button5.Enabled = editable;
@@ -136,6 +134,7 @@ namespace E_Diagnosis
                 dataGridView3.Columns[1].Visible = false;
 
                 //cprescription
+                numericUpDown3.Value = this.record.cprescription.amount;
                 subtotal = 0.00M;
                 foreach (Item item in this.record.cprescription.items)
                 {
@@ -362,7 +361,7 @@ namespace E_Diagnosis
 
         private void button4_Click(object sender, EventArgs e)
         {
-            del_item(dataGridView3, Category.中药);
+            del_item(dataGridView3, Category.中成药与西药);
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -372,7 +371,7 @@ namespace E_Diagnosis
 
         private void button6_Click(object sender, EventArgs e)
         {
-            del_item(dataGridView4, Category.中成药与西药);
+            del_item(dataGridView4, Category.中药);
         }
 
         /*-----------病人页面的操作-------------*/
@@ -505,6 +504,8 @@ namespace E_Diagnosis
             r.临床诊断 = textBox18.Text;
             r.治疗意见 = textBox19.Text;
             r.说明 = textBox20.Text;
+            r.wprescription = new Prescription();
+            r.cprescription = new Prescription();
             this.patient.records.Add(r);
             db.SaveChanges();
             set_records();
@@ -520,7 +521,6 @@ namespace E_Diagnosis
             this.record.核对 = textBox25.Text;
             this.record.发药 = textBox26.Text;
             db.SaveChanges();
-            set_prescriptions();
             set_prescription_editable(false);
         }
 

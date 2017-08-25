@@ -167,8 +167,6 @@ namespace E_Diagnosis
     {
         public Record()
         {
-            this.wprescription = new Prescription();
-            this.cprescription = new Prescription();
         }
         public int id { get; set; }
         public virtual Patient patient { get; set; }
