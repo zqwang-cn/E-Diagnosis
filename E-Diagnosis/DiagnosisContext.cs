@@ -165,11 +165,9 @@ namespace E_Diagnosis
 
     public class Record
     {
-        public Record()
-        {
-        }
         public int id { get; set; }
         public virtual Patient patient { get; set; }
+        public bool finished { get; set; } = false;
         public string 类型 { get; set; }
         public string 科别 { get; set; }
         public DateTime 就诊日期 { get; set; }
@@ -209,12 +207,11 @@ namespace E_Diagnosis
         public Prescription()
         {
             this.items = new List<Item>();
-            this.amount = 1;
         }
         public int id { get; set; }
         public Record record { get; set; }
-        public bool istemplate { get; set; }
-        public int amount { get; set; }
+        public bool istemplate { get; set; } = false;
+        public int amount { get; set; } = 1;
         public decimal price { get; set; }
         public virtual ICollection<Item> items { get; set; }
     }

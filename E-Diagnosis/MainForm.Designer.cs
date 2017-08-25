@@ -139,11 +139,11 @@
             this.label47 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.button12 = new System.Windows.Forms.Button();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label48 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -1364,6 +1364,7 @@
             // 
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableLayoutPanel3.SetColumnSpan(this.button3, 2);
+            this.button3.Enabled = false;
             this.button3.Location = new System.Drawing.Point(49, 511);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 22);
@@ -1376,6 +1377,7 @@
             // 
             this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableLayoutPanel3.SetColumnSpan(this.button4, 2);
+            this.button4.Enabled = false;
             this.button4.Location = new System.Drawing.Point(223, 511);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 22);
@@ -1388,6 +1390,7 @@
             // 
             this.button5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableLayoutPanel3.SetColumnSpan(this.button5, 2);
+            this.button5.Enabled = false;
             this.button5.Location = new System.Drawing.Point(445, 511);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 22);
@@ -1400,6 +1403,7 @@
             // 
             this.button6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableLayoutPanel3.SetColumnSpan(this.button6, 2);
+            this.button6.Enabled = false;
             this.button6.Location = new System.Drawing.Point(619, 511);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 22);
@@ -1483,6 +1487,7 @@
             // textBox22
             // 
             this.textBox22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox22.Enabled = false;
             this.textBox22.Location = new System.Drawing.Point(844, 127);
             this.textBox22.Name = "textBox22";
             this.textBox22.Size = new System.Drawing.Size(91, 21);
@@ -1491,6 +1496,7 @@
             // textBox23
             // 
             this.textBox23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox23.Enabled = false;
             this.textBox23.Location = new System.Drawing.Point(844, 182);
             this.textBox23.Name = "textBox23";
             this.textBox23.Size = new System.Drawing.Size(91, 21);
@@ -1499,6 +1505,7 @@
             // textBox24
             // 
             this.textBox24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox24.Enabled = false;
             this.textBox24.Location = new System.Drawing.Point(844, 237);
             this.textBox24.Name = "textBox24";
             this.textBox24.Size = new System.Drawing.Size(91, 21);
@@ -1507,6 +1514,7 @@
             // textBox25
             // 
             this.textBox25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox25.Enabled = false;
             this.textBox25.Location = new System.Drawing.Point(844, 292);
             this.textBox25.Name = "textBox25";
             this.textBox25.Size = new System.Drawing.Size(91, 21);
@@ -1515,6 +1523,7 @@
             // textBox26
             // 
             this.textBox26.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox26.Enabled = false;
             this.textBox26.Location = new System.Drawing.Point(844, 347);
             this.textBox26.Name = "textBox26";
             this.textBox26.Size = new System.Drawing.Size(91, 21);
@@ -1534,6 +1543,7 @@
             // 
             this.button7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableLayoutPanel3.SetColumnSpan(this.button7, 2);
+            this.button7.Enabled = false;
             this.button7.Location = new System.Drawing.Point(803, 401);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 23);
@@ -1565,6 +1575,7 @@
             // numericUpDown3
             // 
             this.numericUpDown3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.numericUpDown3.Enabled = false;
             this.numericUpDown3.Location = new System.Drawing.Point(486, 457);
             this.numericUpDown3.Minimum = new decimal(new int[] {
             1,
@@ -1614,6 +1625,16 @@
             this.label46.TabIndex = 27;
             this.label46.Text = "0元";
             // 
+            // label48
+            // 
+            this.label48.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(869, 76);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(41, 12);
+            this.label48.TabIndex = 29;
+            this.label48.Text = "0.00元";
+            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.button12);
@@ -1647,16 +1668,6 @@
             // patientBindingSource
             // 
             this.patientBindingSource.DataSource = typeof(E_Diagnosis.Patient);
-            // 
-            // label48
-            // 
-            this.label48.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(869, 76);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(41, 12);
-            this.label48.TabIndex = 29;
-            this.label48.Text = "0.00元";
             // 
             // MainForm
             // 

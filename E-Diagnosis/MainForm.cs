@@ -120,14 +120,18 @@ namespace E_Diagnosis
         {
             if (this.record != null)
             {
-                //wprescription
-                decimal subtotal = 0.00M;
-                foreach(Item item in this.record.wprescription.items)
+                //如果处方未保存，则可以编辑，否则不可编辑
+                if (this.record.finished)
                 {
-                    subtotal += item.小计;
+                    set_prescription_editable(false);
                 }
-                this.record.wprescription.price = subtotal;
-                label46.Text = subtotal.ToString() + "元";
+                else
+                {
+                    set_prescription_editable(true);
+                }
+
+                //wprescription
+                label46.Text = this.record.wprescription.price.ToString() + "元";
                 dataGridView3.DataSource = this.record.wprescription.items.ToList();
                 dataGridView3.ClearSelection();
                 dataGridView3.Columns[0].Visible = false;
@@ -135,13 +139,7 @@ namespace E_Diagnosis
 
                 //cprescription
                 numericUpDown3.Value = this.record.cprescription.amount;
-                subtotal = 0.00M;
-                foreach (Item item in this.record.cprescription.items)
-                {
-                    subtotal += item.小计;
-                }
-                this.record.cprescription.price = subtotal;
-                label47.Text = (subtotal*this.record.cprescription.amount).ToString() + "元";
+                label47.Text = (this.record.cprescription.price * this.record.cprescription.amount).ToString() + "元";
                 dataGridView4.DataSource = this.record.cprescription.items.ToList();
                 dataGridView4.ClearSelection();
                 dataGridView4.Columns[0].Visible = false;
@@ -153,6 +151,21 @@ namespace E_Diagnosis
                 textBox24.Text = this.record.审核;
                 textBox25.Text = this.record.核对;
                 textBox26.Text = this.record.发药;
+            }
+            else
+            {
+                dataGridView3.DataSource = null;
+                dataGridView4.DataSource = null;
+                label46.Text = "0元";
+                label47.Text = "0元";
+                label48.Text = "0元";
+                numericUpDown3.Value = 1;
+                textBox22.Text = "";
+                textBox23.Text = "";
+                textBox24.Text = "";
+                textBox25.Text = "";
+                textBox26.Text = "";
+                set_prescription_editable(false);
             }
         }
 
@@ -175,7 +188,6 @@ namespace E_Diagnosis
                 textBox18.Text = "";
                 textBox19.Text = "";
                 textBox20.Text = "";
-                set_prescriptions();
                 set_record_editable(true);
                 button11.Enabled = false;
                 button2.Enabled = true;
@@ -196,11 +208,11 @@ namespace E_Diagnosis
                 textBox18.Text = r.临床诊断;
                 textBox19.Text = r.治疗意见;
                 textBox20.Text = r.说明;
-                set_prescriptions();
                 set_record_editable(false);
                 button11.Enabled = true;
                 button2.Enabled = false;
             }
+            set_prescriptions();
         }
 
         private void set_records()
@@ -210,8 +222,8 @@ namespace E_Diagnosis
                 dataGridView2.DataSource = new List<Record>();
                 dataGridView2.Columns[0].Visible = false;
                 dataGridView2.Columns[1].Visible = false;
-                dataGridView2.Columns[4].DefaultCellStyle.Format = "yyyy/MM/dd";
-                dataGridView2.Columns[15].Visible = false;
+                dataGridView2.Columns[2].Visible = false;
+                dataGridView2.Columns[5].DefaultCellStyle.Format = "yyyy/MM/dd";
                 dataGridView2.Columns[16].Visible = false;
                 dataGridView2.Columns[17].Visible = false;
                 dataGridView2.Columns[18].Visible = false;
@@ -219,6 +231,7 @@ namespace E_Diagnosis
                 dataGridView2.Columns[20].Visible = false;
                 dataGridView2.Columns[21].Visible = false;
                 dataGridView2.Columns[22].Visible = false;
+                dataGridView2.Columns[23].Visible = false;
                 set_record(null);
             }
             else
@@ -226,8 +239,8 @@ namespace E_Diagnosis
                 dataGridView2.DataSource = this.patient.records.ToList();
                 dataGridView2.Columns[0].Visible = false;
                 dataGridView2.Columns[1].Visible = false;
-                dataGridView2.Columns[4].DefaultCellStyle.Format = "yyyy/MM/dd";
-                dataGridView2.Columns[15].Visible = false;
+                dataGridView2.Columns[2].Visible = false;
+                dataGridView2.Columns[5].DefaultCellStyle.Format = "yyyy/MM/dd";
                 dataGridView2.Columns[16].Visible = false;
                 dataGridView2.Columns[17].Visible = false;
                 dataGridView2.Columns[18].Visible = false;
@@ -235,6 +248,7 @@ namespace E_Diagnosis
                 dataGridView2.Columns[20].Visible = false;
                 dataGridView2.Columns[21].Visible = false;
                 dataGridView2.Columns[22].Visible = false;
+                dataGridView2.Columns[23].Visible = false;
                 if (dataGridView2.Rows.Count > 0)
                 {
                     dataGridView2.Rows[dataGridView2.Rows.Count - 1].Selected = true;
@@ -315,16 +329,18 @@ namespace E_Diagnosis
                     item.单价 = mf.result_medicine.价格;
                     item.数量 = mf.result_amount;
                     item.小计 = item.单价 * item.数量;
+                    Prescription p;
                     if (mf.result_medicine.category == Category.中成药与西药)
                     {
-                        item.prescription = this.record.wprescription;
-                        this.record.wprescription.items.Add(item);
+                        p = this.record.wprescription;
                     }
                     else
                     {
-                        item.prescription = this.record.cprescription;
-                        this.record.cprescription.items.Add(item);
+                        p = this.record.cprescription;
                     }
+                    item.prescription = p;
+                    p.items.Add(item);
+                    p.price += item.小计;
                     set_prescriptions();
                 }
             }
@@ -339,15 +355,18 @@ namespace E_Diagnosis
             else if (MessageBox.Show("是否确认删除？", "确认信息", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 int index = dgv.CurrentRow.Index;
-                Item p = ((List<Item>)dgv.DataSource)[index];
+                Item i = ((List<Item>)dgv.DataSource)[index];
+                Prescription p;
                 if (c == Category.中成药与西药)
                 {
-                    this.record.wprescription.items.Remove(p);
+                    p = this.record.wprescription;
                 }
                 else
                 {
-                    this.record.cprescription.items.Remove(p);
+                    p = this.record.cprescription;
                 }
+                p.items.Remove(i);
+                p.price -= i.小计;
                 db.SaveChanges();
                 set_prescriptions();
             }
@@ -520,14 +539,18 @@ namespace E_Diagnosis
             this.record.审核 = textBox24.Text;
             this.record.核对 = textBox25.Text;
             this.record.发药 = textBox26.Text;
+            this.record.finished = true;
             db.SaveChanges();
             set_prescription_editable(false);
         }
 
         private void numericUpDown3_ValueChanged(object sender, EventArgs e)
         {
-            this.record.cprescription.amount = (int)numericUpDown3.Value;
-            set_prescriptions();
+            if (this.record != null)
+            {
+                this.record.cprescription.amount = (int)numericUpDown3.Value;
+                set_prescriptions();
+            }
         }
 
 
