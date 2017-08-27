@@ -81,6 +81,7 @@ namespace E_Diagnosis
             textBox25.Enabled = editable;
             textBox26.Enabled = editable;
             button7.Enabled = editable;
+            button12.Enabled = !editable;
         }
 
         //刷新用户列表
@@ -111,6 +112,10 @@ namespace E_Diagnosis
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            tabControl1.SelectTab(1);
+            tabControl1.SelectTab(2);
+            tabControl1.SelectTab(3);
+            tabControl1.SelectTab(0);
             db = new DiagnosisContext();
             refresh();
             this.reportViewer1.RefreshReport();
@@ -118,6 +123,8 @@ namespace E_Diagnosis
 
         private void set_prescriptions()
         {
+            reportViewer1.LocalReport.DataSources.Clear();
+            reportViewer1.RefreshReport();
             if (this.record != null)
             {
                 //如果处方未保存，则可以编辑，否则不可编辑
@@ -166,6 +173,7 @@ namespace E_Diagnosis
                 textBox25.Text = "";
                 textBox26.Text = "";
                 set_prescription_editable(false);
+                button12.Enabled = false;
             }
         }
 
@@ -567,9 +575,17 @@ namespace E_Diagnosis
             r.Add(this.record);
             List<Patient> p = new List<Patient>();
             p.Add(this.patient);
+            List<Prescription> wp = new List<Prescription>();
+            wp.Add(this.record.wprescription);
+            List<Prescription> cp = new List<Prescription>();
+            cp.Add(this.record.cprescription);
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("patient", p));
             reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("record", r));
+            reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("wp", wp));
+            reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("cp", cp));
+            reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("witems", this.record.wprescription.items.ToList()));
+            reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("citems", this.record.cprescription.items.ToList()));
             reportViewer1.RefreshReport();
         }
     }

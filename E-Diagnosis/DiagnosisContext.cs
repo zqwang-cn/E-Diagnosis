@@ -158,7 +158,6 @@ namespace E_Diagnosis
         public string 身份证号 { get; set; }
         public string 住址 { get; set; }        
         public string 电话 { get; set; }
-        [Column(TypeName = "text")]
         public string 过敏史 { get; set; }
         public virtual ICollection<Record> records { get; set; }
     }
@@ -171,27 +170,16 @@ namespace E_Diagnosis
         public string 类型 { get; set; }
         public string 科别 { get; set; }
         public DateTime 就诊日期 { get; set; }
-        [Column(TypeName = "text")]
         public string 主诉 { get; set; }
-        [Column(TypeName = "text")]
         public string 现病史 { get; set; }
-        [Column(TypeName = "text")]
         public string 既往史 { get; set; }
-        [Column(TypeName = "text")]
         public string 个人史 { get; set; }
-        [Column(TypeName = "text")]
         public string 家族史 { get; set; }
-        [Column(TypeName = "text")]
         public string 月经及婚育史 { get; set; }
-        [Column(TypeName = "text")]
         public string 体格检查 { get; set; }
-        [Column(TypeName = "text")]
         public string 辅助检查 { get; set; }
-        [Column(TypeName = "text")]
         public string 临床诊断 { get; set; }
-        [Column(TypeName = "text")]
         public string 治疗意见 { get; set; }
-        [Column(TypeName = "text")]
         public string 说明 { get; set; }
         public string 医师 { get; set; }
         public string 调配 { get; set; }

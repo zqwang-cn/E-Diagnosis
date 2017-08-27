@@ -21,7 +21,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.07592cm</Top>
-        <Left>6.45153cm</Left>
+        <Left>5.81653cm</Left>
         <Height>0.94396cm</Height>
         <Width>4.59021cm</Width>
         <Style>
@@ -52,7 +52,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>1.47849cm</Top>
-        <Left>1.24221cm</Left>
+        <Left>0.60721cm</Left>
         <Height>0.6cm</Height>
         <Width>1.28292cm</Width>
         <ZIndex>1</ZIndex>
@@ -84,7 +84,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>1.47849cm</Top>
-        <Left>13.09022cm</Left>
+        <Left>12.45522cm</Left>
         <Height>0.6cm</Height>
         <Width>1.30937cm</Width>
         <ZIndex>2</ZIndex>
@@ -119,7 +119,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>1.47849cm</Top>
-        <Left>8.39591cm</Left>
+        <Left>7.76091cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>3</ZIndex>
@@ -151,7 +151,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>1.47849cm</Top>
-        <Left>6.45153cm</Left>
+        <Left>5.81653cm</Left>
         <Height>0.6cm</Height>
         <Width>1.94438cm</Width>
         <ZIndex>4</ZIndex>
@@ -185,7 +185,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>1.47849cm</Top>
-        <Left>2.52512cm</Left>
+        <Left>1.89012cm</Left>
         <Height>0.6cm</Height>
         <Width>1.36229cm</Width>
         <ZIndex>5</ZIndex>
@@ -217,7 +217,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>2.46655cm</Top>
-        <Left>6.7319cm</Left>
+        <Left>6.0969cm</Left>
         <Height>0.6cm</Height>
         <Width>1.3cm</Width>
         <ZIndex>6</ZIndex>
@@ -251,7 +251,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>2.47785cm</Top>
-        <Left>5.67485cm</Left>
+        <Left>5.03985cm</Left>
         <Height>0.6cm</Height>
         <Width>0.74083cm</Width>
         <ZIndex>7</ZIndex>
@@ -283,7 +283,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>2.46655cm</Top>
-        <Left>4.37485cm</Left>
+        <Left>3.73985cm</Left>
         <Height>0.6cm</Height>
         <Width>1.3cm</Width>
         <ZIndex>8</ZIndex>
@@ -317,7 +317,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>2.43127cm</Top>
-        <Left>2.55215cm</Left>
+        <Left>1.91715cm</Left>
         <Height>0.6cm</Height>
         <Width>1.62687cm</Width>
         <ZIndex>9</ZIndex>
@@ -349,7 +349,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>2.43127cm</Top>
-        <Left>1.25215cm</Left>
+        <Left>0.61715cm</Left>
         <Height>0.6cm</Height>
         <Width>1.3cm</Width>
         <ZIndex>10</ZIndex>
@@ -383,7 +383,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>1.47849cm</Top>
-        <Left>14.32904cm</Left>
+        <Left>13.69404cm</Left>
         <Height>0.6cm</Height>
         <Width>1.30937cm</Width>
         <ZIndex>11</ZIndex>
@@ -399,7 +399,7 @@
       </Textbox>
       <Line Name="Line1">
         <Top>2.25488cm</Top>
-        <Left>1.02757cm</Left>
+        <Left>0.39257cm</Left>
         <Height>0cm</Height>
         <Width>14.89606cm</Width>
         <ZIndex>12</ZIndex>
@@ -427,8 +427,8 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>4.17174cm</Top>
-        <Left>3.38174cm</Left>
-        <Height>1.60542cm</Height>
+        <Left>2.71145cm</Left>
+        <Height>1.2cm</Height>
         <Width>12.54187cm</Width>
         <ZIndex>13</ZIndex>
         <Style>
@@ -459,7 +459,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>4.17174cm</Top>
-        <Left>1.25215cm</Left>
+        <Left>0.61715cm</Left>
         <Height>0.6cm</Height>
         <Width>1.95319cm</Width>
         <ZIndex>14</ZIndex>
@@ -493,7 +493,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>2.46655cm</Top>
-        <Left>10.74948cm</Left>
+        <Left>10.11448cm</Left>
         <Height>0.6cm</Height>
         <Width>1.4588cm</Width>
         <ZIndex>15</ZIndex>
@@ -525,7 +525,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>2.46655cm</Top>
-        <Left>9.44948cm</Left>
+        <Left>8.81448cm</Left>
         <Height>0.6cm</Height>
         <Width>1.3cm</Width>
         <ZIndex>16</ZIndex>
@@ -559,7 +559,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>2.46655cm</Top>
-        <Left>13.61412cm</Left>
+        <Left>12.97912cm</Left>
         <Height>0.6cm</Height>
         <Width>2.05021cm</Width>
         <ZIndex>17</ZIndex>
@@ -591,7 +591,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>2.46655cm</Top>
-        <Left>12.31412cm</Left>
+        <Left>11.67912cm</Left>
         <Height>0.6cm</Height>
         <Width>1.3cm</Width>
         <ZIndex>18</ZIndex>
@@ -626,7 +626,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>2.46655cm</Top>
-        <Left>8.0319cm</Left>
+        <Left>7.3969cm</Left>
         <Height>0.6cm</Height>
         <Width>1.20354cm</Width>
         <ZIndex>19</ZIndex>
@@ -658,7 +658,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>3.25424cm</Top>
-        <Left>6.72196cm</Left>
+        <Left>6.08696cm</Left>
         <Height>0.6cm</Height>
         <Width>1.3cm</Width>
         <ZIndex>20</ZIndex>
@@ -692,7 +692,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>3.25424cm</Top>
-        <Left>5.66491cm</Left>
+        <Left>5.02991cm</Left>
         <Height>0.6cm</Height>
         <Width>0.94481cm</Width>
         <ZIndex>21</ZIndex>
@@ -724,7 +724,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>3.25424cm</Top>
-        <Left>4.36491cm</Left>
+        <Left>3.72991cm</Left>
         <Height>0.6cm</Height>
         <Width>1.3cm</Width>
         <ZIndex>22</ZIndex>
@@ -758,7 +758,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>3.21896cm</Top>
-        <Left>2.55214cm</Left>
+        <Left>1.91714cm</Left>
         <Height>0.6cm</Height>
         <Width>1.62688cm</Width>
         <ZIndex>23</ZIndex>
@@ -790,7 +790,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>3.21896cm</Top>
-        <Left>1.24221cm</Left>
+        <Left>0.60721cm</Left>
         <Height>0.6cm</Height>
         <Width>1.3cm</Width>
         <ZIndex>24</ZIndex>
@@ -824,7 +824,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>3.25424cm</Top>
-        <Left>11.83371cm</Left>
+        <Left>11.19871cm</Left>
         <Height>0.6cm</Height>
         <Width>3.90116cm</Width>
         <ZIndex>25</ZIndex>
@@ -856,7 +856,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>3.25424cm</Top>
-        <Left>10.53371cm</Left>
+        <Left>9.89871cm</Left>
         <Height>0.6cm</Height>
         <Width>1.3cm</Width>
         <ZIndex>26</ZIndex>
@@ -890,7 +890,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>3.25424cm</Top>
-        <Left>8.02196cm</Left>
+        <Left>7.38696cm</Left>
         <Height>0.6cm</Height>
         <Width>2.28833cm</Width>
         <ZIndex>27</ZIndex>
@@ -906,7 +906,7 @@
       </Textbox>
       <Line Name="Line2">
         <Top>3.99535cm</Top>
-        <Left>1.02759cm</Left>
+        <Left>0.39259cm</Left>
         <Height>0cm</Height>
         <Width>14.89604cm</Width>
         <ZIndex>28</ZIndex>
@@ -933,9 +933,9 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>5.95354cm</Top>
-        <Left>3.38174cm</Left>
-        <Height>1.60542cm</Height>
+        <Top>5.54813cm</Top>
+        <Left>2.74674cm</Left>
+        <Height>1.2cm</Height>
         <Width>12.54188cm</Width>
         <ZIndex>29</ZIndex>
         <Style>
@@ -965,8 +965,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>5.95354cm</Top>
-        <Left>1.25215cm</Left>
+        <Top>5.54813cm</Top>
+        <Left>0.61715cm</Left>
         <Height>0.6cm</Height>
         <Width>1.95319cm</Width>
         <ZIndex>30</ZIndex>
@@ -997,8 +997,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>7.73535cm</Top>
-        <Left>3.38175cm</Left>
+        <Top>6.92452cm</Top>
+        <Left>2.76665cm</Left>
         <Height>0.6cm</Height>
         <Width>12.54188cm</Width>
         <ZIndex>31</ZIndex>
@@ -1029,8 +1029,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>7.73535cm</Top>
-        <Left>1.25216cm</Left>
+        <Top>6.92452cm</Top>
+        <Left>0.63706cm</Left>
         <Height>0.6cm</Height>
         <Width>1.95319cm</Width>
         <ZIndex>32</ZIndex>
@@ -1061,8 +1061,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>8.51174cm</Top>
-        <Left>3.38175cm</Left>
+        <Top>7.70091cm</Top>
+        <Left>2.76665cm</Left>
         <Height>0.6cm</Height>
         <Width>12.54188cm</Width>
         <ZIndex>33</ZIndex>
@@ -1093,8 +1093,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>8.51174cm</Top>
-        <Left>1.25216cm</Left>
+        <Top>7.70091cm</Top>
+        <Left>0.63706cm</Left>
         <Height>0.6cm</Height>
         <Width>1.95319cm</Width>
         <ZIndex>34</ZIndex>
@@ -1125,8 +1125,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>9.28813cm</Top>
-        <Left>3.38175cm</Left>
+        <Top>8.4773cm</Top>
+        <Left>2.76665cm</Left>
         <Height>0.6cm</Height>
         <Width>12.54188cm</Width>
         <ZIndex>35</ZIndex>
@@ -1157,8 +1157,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>9.28813cm</Top>
-        <Left>1.25216cm</Left>
+        <Top>8.4773cm</Top>
+        <Left>0.63706cm</Left>
         <Height>0.6cm</Height>
         <Width>1.95319cm</Width>
         <ZIndex>36</ZIndex>
@@ -1189,8 +1189,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>10.06452cm</Top>
-        <Left>3.3718cm</Left>
+        <Top>9.25369cm</Top>
+        <Left>2.7567cm</Left>
         <Height>0.6cm</Height>
         <Width>12.54188cm</Width>
         <ZIndex>37</ZIndex>
@@ -1221,8 +1221,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>10.06452cm</Top>
-        <Left>1.24221cm</Left>
+        <Top>9.25369cm</Top>
+        <Left>0.62711cm</Left>
         <Height>0.6cm</Height>
         <Width>1.95319cm</Width>
         <ZIndex>38</ZIndex>
@@ -1253,8 +1253,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>10.84091cm</Top>
-        <Left>1.24221cm</Left>
+        <Top>10.03008cm</Top>
+        <Left>0.62711cm</Left>
         <Height>0.6cm</Height>
         <Width>1.95319cm</Width>
         <ZIndex>39</ZIndex>
@@ -1285,9 +1285,9 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>10.84091cm</Top>
-        <Left>3.3718cm</Left>
-        <Height>1.60542cm</Height>
+        <Top>10.03008cm</Top>
+        <Left>2.7567cm</Left>
+        <Height>1.2cm</Height>
         <Width>12.54188cm</Width>
         <ZIndex>40</ZIndex>
         <Style>
@@ -1317,8 +1317,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>12.62272cm</Top>
-        <Left>1.25216cm</Left>
+        <Top>11.40647cm</Top>
+        <Left>0.61716cm</Left>
         <Height>0.6cm</Height>
         <Width>1.95319cm</Width>
         <ZIndex>41</ZIndex>
@@ -1349,9 +1349,9 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>12.62272cm</Top>
-        <Left>3.38175cm</Left>
-        <Height>1.60542cm</Height>
+        <Top>11.40647cm</Top>
+        <Left>2.74675cm</Left>
+        <Height>1.2cm</Height>
         <Width>12.54188cm</Width>
         <ZIndex>42</ZIndex>
         <Style>
@@ -1381,8 +1381,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>15.18091cm</Top>
-        <Left>1.25216cm</Left>
+        <Top>13.55925cm</Top>
+        <Left>0.62711cm</Left>
         <Height>0.6cm</Height>
         <Width>1.95319cm</Width>
         <ZIndex>43</ZIndex>
@@ -1413,9 +1413,9 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>15.18091cm</Top>
-        <Left>3.38175cm</Left>
-        <Height>1.60542cm</Height>
+        <Top>13.55925cm</Top>
+        <Left>2.7567cm</Left>
+        <Height>1.2cm</Height>
         <Width>12.54188cm</Width>
         <ZIndex>44</ZIndex>
         <Style>
@@ -1445,8 +1445,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>14.40452cm</Top>
-        <Left>1.24221cm</Left>
+        <Top>12.78286cm</Top>
+        <Left>0.61716cm</Left>
         <Height>0.6cm</Height>
         <Width>1.95319cm</Width>
         <ZIndex>45</ZIndex>
@@ -1477,8 +1477,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>14.40452cm</Top>
-        <Left>3.3718cm</Left>
+        <Top>12.78286cm</Top>
+        <Left>2.74675cm</Left>
         <Height>0.6cm</Height>
         <Width>12.54188cm</Width>
         <ZIndex>46</ZIndex>
@@ -1493,8 +1493,8 @@
         </Style>
       </Textbox>
       <Line Name="Line3">
-        <Top>16.96272cm</Top>
-        <Left>1.02759cm</Left>
+        <Top>15.05772cm</Top>
+        <Left>0.39259cm</Left>
         <Height>0cm</Height>
         <Width>14.89604cm</Width>
         <ZIndex>47</ZIndex>
@@ -1504,20 +1504,1018 @@
           </Border>
         </Style>
       </Line>
+      <Textbox Name="Textbox14">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>西药与中成药处方</Value>
+                <Style>
+                  <FontFamily>宋体</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox14</rd:DefaultName>
+        <Top>15.23411cm</Top>
+        <Left>0.61716cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.4525cm</Width>
+        <ZIndex>48</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox48">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!price.Value, "wp")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox48</rd:DefaultName>
+        <Top>15.23411cm</Top>
+        <Left>13.03035cm</Left>
+        <Height>0.6cm</Height>
+        <Width>1.60042cm</Width>
+        <ZIndex>49</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox49">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>金额：</Value>
+                <Style>
+                  <FontFamily>宋体</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox49</rd:DefaultName>
+        <Top>15.23411cm</Top>
+        <Left>11.58868cm</Left>
+        <Height>0.6cm</Height>
+        <Width>1.44167cm</Width>
+        <ZIndex>50</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox50">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>元</Value>
+                <Style>
+                  <FontFamily>宋体</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox50</rd:DefaultName>
+        <Top>15.23411cm</Top>
+        <Left>14.63076cm</Left>
+        <Height>0.6cm</Height>
+        <Width>0.64792cm</Width>
+        <ZIndex>51</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Tablix Name="Tablix2">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>3.72401cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>3.72401cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>3.72401cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>3.72401cm</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.71167cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox57">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>名称</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox57</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox59">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>单价</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox59</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox61">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>数量</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox61</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox63">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>小计</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox63</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.71167cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="名称">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!名称.Value</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>名称</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="单价">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!单价.Value</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>单价</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="数量">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!数量.Value</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>数量</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="小计">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!小计.Value</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>小计</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <KeepWithGroup>After</KeepWithGroup>
+            </TablixMember>
+            <TablixMember>
+              <Group Name="详细信息" />
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>witems</DataSetName>
+        <Top>16.0105cm</Top>
+        <Left>0.39259cm</Left>
+        <Height>1.42334cm</Height>
+        <Width>14.89604cm</Width>
+        <ZIndex>52</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+      <Line Name="Line4">
+        <Top>17.61022cm</Top>
+        <Left>0.39259cm</Left>
+        <Height>0cm</Height>
+        <Width>14.89604cm</Width>
+        <ZIndex>53</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Textbox Name="Textbox51">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>中药处方</Value>
+                <Style>
+                  <FontFamily>宋体</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox14</rd:DefaultName>
+        <Top>17.78661cm</Top>
+        <Left>0.60721cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.4525cm</Width>
+        <ZIndex>54</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox52">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!price.Value, "cp")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox48</rd:DefaultName>
+        <Top>17.78661cm</Top>
+        <Left>13.0403cm</Left>
+        <Height>0.6cm</Height>
+        <Width>1.60042cm</Width>
+        <ZIndex>55</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox53">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>金额：</Value>
+                <Style>
+                  <FontFamily>宋体</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox49</rd:DefaultName>
+        <Top>17.78661cm</Top>
+        <Left>11.59863cm</Left>
+        <Height>0.6cm</Height>
+        <Width>1.44167cm</Width>
+        <ZIndex>56</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox54">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>元</Value>
+                <Style>
+                  <FontFamily>宋体</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox50</rd:DefaultName>
+        <Top>17.78661cm</Top>
+        <Left>14.64071cm</Left>
+        <Height>0.6cm</Height>
+        <Width>0.64792cm</Width>
+        <ZIndex>57</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox73">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!amount.Value, "cp")</Value>
+                <Style>
+                  <FontFamily>宋体</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox73</rd:DefaultName>
+        <Top>17.78661cm</Top>
+        <Left>7.21249cm</Left>
+        <Height>0.6cm</Height>
+        <Width>1.38795cm</Width>
+        <ZIndex>58</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox74">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>剂</Value>
+                <Style>
+                  <FontFamily>宋体</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox74</rd:DefaultName>
+        <Top>17.78661cm</Top>
+        <Left>8.60044cm</Left>
+        <Height>0.6cm</Height>
+        <Width>0.53382cm</Width>
+        <ZIndex>59</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Tablix Name="Tablix3">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>3.72401cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>3.72401cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>3.72401cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>3.72401cm</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.71167cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox84">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>名称</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox84</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox85">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>单价</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox85</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox86">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>数量</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox86</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox88">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>小计</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox88</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.71167cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="名称1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!名称.Value</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>名称1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="单价2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!单价.Value</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>单价</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="数量1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!数量.Value</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>数量1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="小计1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!小计.Value</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>小计1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <KeepWithGroup>After</KeepWithGroup>
+            </TablixMember>
+            <TablixMember>
+              <Group Name="详细信息2" />
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>citems</DataSetName>
+        <Top>18.563cm</Top>
+        <Left>0.39259cm</Left>
+        <Height>1.42334cm</Height>
+        <Width>14.89604cm</Width>
+        <ZIndex>60</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
     </ReportItems>
     <Height>8.67708in</Height>
-    <Style />
+    <Style>
+      <Border>
+        <Style>None</Style>
+      </Border>
+    </Style>
   </Body>
-  <Width>6.54167in</Width>
+  <Width>6.30548in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
-    <LeftMargin>2cm</LeftMargin>
-    <RightMargin>2cm</RightMargin>
+    <LeftMargin>2.5cm</LeftMargin>
+    <RightMargin>0cm</RightMargin>
     <TopMargin>2cm</TopMargin>
-    <BottomMargin>2cm</BottomMargin>
+    <BottomMargin>0cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
-    <Style />
+    <Style>
+      <Border>
+        <Style>None</Style>
+      </Border>
+    </Style>
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -1550,7 +2548,7 @@
         </Field>
         <Field Name="费别">
           <DataField>费别</DataField>
-          <rd:TypeName>E_Diagnosis.FeeType</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="过敏史">
           <DataField>过敏史</DataField>
@@ -1558,7 +2556,7 @@
         </Field>
         <Field Name="婚姻">
           <DataField>婚姻</DataField>
-          <rd:TypeName>E_Diagnosis.Marriage</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="籍贯">
           <DataField>籍贯</DataField>
@@ -1566,7 +2564,7 @@
         </Field>
         <Field Name="民族">
           <DataField>民族</DataField>
-          <rd:TypeName>E_Diagnosis.Nation</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="年龄">
           <DataField>年龄</DataField>
@@ -1582,7 +2580,7 @@
         </Field>
         <Field Name="性别">
           <DataField>性别</DataField>
-          <rd:TypeName>E_Diagnosis.Gender</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="姓名">
           <DataField>姓名</DataField>
@@ -1590,7 +2588,7 @@
         </Field>
         <Field Name="血型">
           <DataField>血型</DataField>
-          <rd:TypeName>E_Diagnosis.BloodType</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="医保卡号">
           <DataField>医保卡号</DataField>
@@ -1617,6 +2615,14 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
+        <Field Name="cprescription">
+          <DataField>cprescription</DataField>
+          <rd:TypeName>E_Diagnosis.Prescription</rd:TypeName>
+        </Field>
+        <Field Name="finished">
+          <DataField>finished</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
         <Field Name="id">
           <DataField>id</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
@@ -1625,12 +2631,24 @@
           <DataField>patient</DataField>
           <rd:TypeName>E_Diagnosis.Patient</rd:TypeName>
         </Field>
+        <Field Name="wprescription">
+          <DataField>wprescription</DataField>
+          <rd:TypeName>E_Diagnosis.Prescription</rd:TypeName>
+        </Field>
+        <Field Name="发药">
+          <DataField>发药</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="辅助检查">
           <DataField>辅助检查</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="个人史">
           <DataField>个人史</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="核对">
+          <DataField>核对</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="既往史">
@@ -1647,14 +2665,18 @@
         </Field>
         <Field Name="科别">
           <DataField>科别</DataField>
-          <rd:TypeName>E_Diagnosis.Department</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="类型">
           <DataField>类型</DataField>
-          <rd:TypeName>E_Diagnosis.Type</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="临床诊断">
           <DataField>临床诊断</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="审核">
+          <DataField>审核</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="说明">
@@ -1663,6 +2685,10 @@
         </Field>
         <Field Name="体格检查">
           <DataField>体格检查</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="调配">
+          <DataField>调配</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="现病史">
@@ -1692,7 +2718,150 @@
         <rd:ObjectDataSourceType>E_Diagnosis.Record, E-Diagnosis, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
+    <DataSet Name="wp">
+      <Query>
+        <DataSourceName>E_Diagnosis</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="amount">
+          <DataField>amount</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="id">
+          <DataField>id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="istemplate">
+          <DataField>istemplate</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="price">
+          <DataField>price</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="record">
+          <DataField>record</DataField>
+          <rd:TypeName>E_Diagnosis.Record</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>E_Diagnosis</rd:DataSetName>
+        <rd:TableName>Prescription</rd:TableName>
+        <rd:ObjectDataSourceType>E_Diagnosis.Prescription, E-Diagnosis, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="cp">
+      <Query>
+        <DataSourceName>E_Diagnosis</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="amount">
+          <DataField>amount</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="id">
+          <DataField>id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="istemplate">
+          <DataField>istemplate</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="price">
+          <DataField>price</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="record">
+          <DataField>record</DataField>
+          <rd:TypeName>E_Diagnosis.Record</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>E_Diagnosis</rd:DataSetName>
+        <rd:TableName>Prescription</rd:TableName>
+        <rd:ObjectDataSourceType>E_Diagnosis.Prescription, E-Diagnosis, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="witems">
+      <Query>
+        <DataSourceName>E_Diagnosis</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="id">
+          <DataField>id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="prescription">
+          <DataField>prescription</DataField>
+          <rd:TypeName>E_Diagnosis.Prescription</rd:TypeName>
+        </Field>
+        <Field Name="单价">
+          <DataField>单价</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="名称">
+          <DataField>名称</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="数量">
+          <DataField>数量</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="小计">
+          <DataField>小计</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>E_Diagnosis</rd:DataSetName>
+        <rd:TableName>Prescription</rd:TableName>
+        <rd:ObjectDataSourceSelectMethod>items</rd:ObjectDataSourceSelectMethod>
+        <rd:ObjectDataSourceType>E_Diagnosis.Prescription, E-Diagnosis, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="citems">
+      <Query>
+        <DataSourceName>E_Diagnosis</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="id">
+          <DataField>id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="prescription">
+          <DataField>prescription</DataField>
+          <rd:TypeName>E_Diagnosis.Prescription</rd:TypeName>
+        </Field>
+        <Field Name="单价">
+          <DataField>单价</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="名称">
+          <DataField>名称</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="数量">
+          <DataField>数量</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="小计">
+          <DataField>小计</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>E_Diagnosis</rd:DataSetName>
+        <rd:TableName>Prescription</rd:TableName>
+        <rd:ObjectDataSourceSelectMethod>items</rd:ObjectDataSourceSelectMethod>
+        <rd:ObjectDataSourceType>E_Diagnosis.Prescription, E-Diagnosis, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
   </DataSets>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>00934e6d-be3d-4867-bc3e-354df2b1e452</rd:ReportID>
 </Report>

@@ -1261,7 +1261,6 @@
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableLayoutPanel3.ColumnCount = 12;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9F));
@@ -1302,6 +1301,7 @@
             this.tableLayoutPanel3.Controls.Add(this.label43, 0, 8);
             this.tableLayoutPanel3.Controls.Add(this.label46, 2, 8);
             this.tableLayoutPanel3.Controls.Add(this.label48, 10, 1);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 10;
@@ -1648,21 +1648,22 @@
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(878, 169);
+            this.button12.Enabled = false;
+            this.button12.Location = new System.Drawing.Point(475, 519);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(75, 23);
             this.button12.TabIndex = 1;
-            this.button12.Text = "生成";
+            this.button12.Text = "生成预览";
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // reportViewer1
             // 
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "E_Diagnosis.whole.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(25, 18);
+            this.reportViewer1.Location = new System.Drawing.Point(25, 12);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(847, 463);
+            this.reportViewer1.Size = new System.Drawing.Size(923, 490);
             this.reportViewer1.TabIndex = 0;
             // 
             // patientBindingSource

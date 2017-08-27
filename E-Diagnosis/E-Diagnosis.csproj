@@ -108,6 +108,7 @@
     <EmbeddedResource Include="whole.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Patient.datasource" />
+    <None Include="Properties\DataSources\Prescription.datasource" />
     <None Include="Properties\DataSources\Record.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
