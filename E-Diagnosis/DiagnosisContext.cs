@@ -198,7 +198,6 @@ namespace E_Diagnosis
         }
         public int id { get; set; }
         public Record record { get; set; }
-        public bool istemplate { get; set; } = false;
         public int amount { get; set; } = 1;
         public decimal price { get; set; }
         public virtual ICollection<Item> items { get; set; }
@@ -214,9 +213,32 @@ namespace E_Diagnosis
         public decimal 小计 { get; set; }
     }
 
+    public class Template
+    {
+        public Template()
+        {
+            this.items = new List<TemplateItem>();
+        }
+        public int id { get; set; }
+        public virtual ICollection<TemplateItem> items { get; set; }
+        public string 名称 { get; set; }
+        public string 功用 { get; set; }
+        public string 主治 { get; set; }
+        public string 备注 { get; set; }
+    }
+
+    public class TemplateItem
+    {
+        public int id { get; set; }
+        public virtual Template template { get; set; }
+        public virtual Medicine medicine { get; set; }
+        public int amount { get; set; }
+    }
+
     public class DiagnosisContext:DbContext
     {
         public DbSet<Medicine> medicine_set { get; set; }
         public DbSet<Patient> patient_set { get; set; }
+        public DbSet<Template> template_set { get; set; }
     }
 }

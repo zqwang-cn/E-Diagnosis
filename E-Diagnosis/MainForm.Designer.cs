@@ -186,15 +186,16 @@
             // medicineToolStripMenuItem
             // 
             this.medicineToolStripMenuItem.Name = "medicineToolStripMenuItem";
-            this.medicineToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.medicineToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.medicineToolStripMenuItem.Text = "药材编辑";
             this.medicineToolStripMenuItem.Click += new System.EventHandler(this.medicineToolStripMenuItem_Click);
             // 
             // prescriptionTemplateToolStripMenuItem
             // 
             this.prescriptionTemplateToolStripMenuItem.Name = "prescriptionTemplateToolStripMenuItem";
-            this.prescriptionTemplateToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.prescriptionTemplateToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.prescriptionTemplateToolStripMenuItem.Text = "处方模板";
+            this.prescriptionTemplateToolStripMenuItem.Click += new System.EventHandler(this.prescriptionTemplateToolStripMenuItem_Click);
             // 
             // label2
             // 

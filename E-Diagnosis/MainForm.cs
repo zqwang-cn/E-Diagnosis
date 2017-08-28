@@ -588,5 +588,11 @@ namespace E_Diagnosis
             reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("citems", this.record.cprescription.items.ToList()));
             reportViewer1.RefreshReport();
         }
+
+        private void prescriptionTemplateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TemplateForm tf = new TemplateForm(db);
+            tf.ShowDialog();
+        }
     }
 }
