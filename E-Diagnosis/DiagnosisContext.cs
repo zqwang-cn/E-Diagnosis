@@ -134,6 +134,10 @@ namespace E_Diagnosis
         public string 名称 { get; set; }
         public string 规格 { get; set; }
         public decimal 价格 { get; set; }
+        public override string ToString()
+        {
+            return this.名称;
+        }
     }
 
     public class Patient
@@ -231,8 +235,8 @@ namespace E_Diagnosis
     {
         public int id { get; set; }
         public virtual Template template { get; set; }
-        public virtual Medicine medicine { get; set; }
-        public int amount { get; set; }
+        public virtual Medicine 名称 { get; set; }
+        public decimal 数量 { get; set; }
     }
 
     public class DiagnosisContext:DbContext

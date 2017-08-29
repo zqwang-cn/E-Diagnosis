@@ -13,7 +13,6 @@ namespace E_Diagnosis
     public partial class TemplateForm : Form
     {
         private DiagnosisContext db;
-        private List<Template> l;
         private Template template;
 
         public TemplateForm(DiagnosisContext db)
@@ -27,25 +26,28 @@ namespace E_Diagnosis
             IEnumerable<Template> query = from template in db.template_set
                         where template.名称.Contains(textBox5.Text)
                         select template;
-            l = query.ToList();
-            dataGridView1.DataSource = l;
+            dataGridView1.DataSource = query.ToList();
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].Visible = false;
             dataGridView1.ClearSelection();
-            textBox1.Text = "";
-            textBox2.Text = "";
-            textBox3.Text = "";
-            textBox4.Text = "";
+            this.template = new Template();
+            set_template();
         }
 
-        private void set_template(Template t)
+        private void set_items()
         {
-            this.template = t;
-            textBox1.Text = t.名称;
-            textBox2.Text = t.功用;
-            textBox3.Text = t.主治;
-            textBox4.Text = t.备注;
-            dataGridView2.DataSource = t.items.ToList();
+            dataGridView2.DataSource = this.template.items.ToList();
+            dataGridView2.Columns[0].Visible = false;
+            dataGridView2.Columns[1].Visible = false;
+        }
+
+        private void set_template()
+        {
+            textBox1.Text = this.template.名称;
+            textBox2.Text = this.template.功用;
+            textBox3.Text = this.template.主治;
+            textBox4.Text = this.template.备注;
+            set_items();
         }
 
         private void TemplateForm_Load(object sender, EventArgs e)
@@ -58,61 +60,84 @@ namespace E_Diagnosis
             refresh();
         }
 
+        //新建模板
         private void button6_Click(object sender, EventArgs e)
         {
-            Template t = new Template();
-            t.名称 = textBox1.Text;
-            t.功用 = textBox2.Text;
-            t.主治 = textBox3.Text;
-            t.备注 = textBox4.Text;
-            db.template_set.Add(t);
+            refresh();
+        }
+
+        //删除模板
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (!((ICollection<Template>)dataGridView1.DataSource).Contains(this.template))
+            {
+                MessageBox.Show("请先选择模板！", "提示信息");
+            }
+            else if (MessageBox.Show("是否确认删除？", "确认信息", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                db.template_set.Remove(this.template);
+                db.SaveChanges();
+                refresh();
+            }
+        }
+
+        //保存模板
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.template.名称 = textBox1.Text;
+            this.template.功用 = textBox2.Text;
+            this.template.主治 = textBox3.Text;
+            this.template.备注 = textBox4.Text;
+            if (!((ICollection<Template>)dataGridView1.DataSource).Contains(this.template))
+            {
+                db.template_set.Add(this.template);
+            }
             db.SaveChanges();
             refresh();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("请先选择一项！", "提示信息");
-            }
-            else if (MessageBox.Show("是否确认删除？", "确认信息", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                db.template_set.Remove(l[dataGridView1.SelectedRows[0].Index]);
-                db.SaveChanges();
-                refresh();
-            }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("请先选择一项！", "提示信息");
-            }
-            else
-            {
-                Template t = (Template)dataGridView1.SelectedRows[0].DataBoundItem;
-                t.名称 = textBox1.Text;
-                t.功用 = textBox2.Text;
-                t.主治 = textBox3.Text;
-                t.备注 = textBox4.Text;
-                db.SaveChanges();
-                refresh();
-            }
-        }
-
+        //选择模板
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count == 0)
             {
-                return;
+                this.template = new Template();
             }
-            Template t = (Template)dataGridView1.SelectedRows[0].DataBoundItem;
-            textBox1.Text = t.名称;
-            textBox2.Text = t.功用;
-            textBox3.Text = t.主治;
-            textBox4.Text = t.备注;
+            else
+            {
+                this.template = (Template)dataGridView1.SelectedRows[0].DataBoundItem;
+            }
+            set_template();
+        }
+
+        //添加药品
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MedicineForm mf = new MedicineForm(db, Category.中药);
+            mf.ShowDialog();
+            if (mf.result_medicine != null)
+            {
+                TemplateItem item = new TemplateItem();
+                item.名称 = mf.result_medicine;
+                item.数量 = mf.result_amount;
+                this.template.items.Add(item);
+                set_items();
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (dataGridView2.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("请选择要删除的药品！", "提示信息");
+            }
+            else if(MessageBox.Show("是否确认删除？", "确认信息", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.template.items.Remove((TemplateItem)dataGridView2.SelectedRows[0].DataBoundItem);
+                set_items();
+            }
         }
     }
+
+
 }
