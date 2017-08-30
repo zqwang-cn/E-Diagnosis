@@ -106,6 +106,7 @@
             // textBox2
             // 
             this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox2.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox2.Location = new System.Drawing.Point(91, 329);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(79, 21);
@@ -114,6 +115,7 @@
             // textBox3
             // 
             this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox3.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox3.Location = new System.Drawing.Point(266, 329);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(77, 21);
@@ -185,6 +187,7 @@
             // textBox1
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox1.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox1.Location = new System.Drawing.Point(264, 9);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(81, 21);
@@ -266,7 +269,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 14;
-            this.button4.Text = "添加到处方";
+            this.button4.Text = "选择药品";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -299,11 +302,11 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(284, 374);
+            this.label6.Location = new System.Drawing.Point(272, 374);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 12);
+            this.label6.Size = new System.Drawing.Size(65, 12);
             this.label6.TabIndex = 16;
-            this.label6.Text = "数量：";
+            this.label6.Text = "药品数量：";
             // 
             // MedicineForm
             // 

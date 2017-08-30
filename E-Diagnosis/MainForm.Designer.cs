@@ -140,6 +140,7 @@
             this.label43 = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.button12 = new System.Windows.Forms.Button();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -186,14 +187,14 @@
             // medicineToolStripMenuItem
             // 
             this.medicineToolStripMenuItem.Name = "medicineToolStripMenuItem";
-            this.medicineToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.medicineToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.medicineToolStripMenuItem.Text = "药材编辑";
             this.medicineToolStripMenuItem.Click += new System.EventHandler(this.medicineToolStripMenuItem_Click);
             // 
             // prescriptionTemplateToolStripMenuItem
             // 
             this.prescriptionTemplateToolStripMenuItem.Name = "prescriptionTemplateToolStripMenuItem";
-            this.prescriptionTemplateToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.prescriptionTemplateToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.prescriptionTemplateToolStripMenuItem.Text = "处方模板";
             this.prescriptionTemplateToolStripMenuItem.Click += new System.EventHandler(this.prescriptionTemplateToolStripMenuItem_Click);
             // 
@@ -210,6 +211,7 @@
             // textBox2
             // 
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox2.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox2.Location = new System.Drawing.Point(250, 16);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(51, 21);
@@ -220,6 +222,7 @@
             // 
             this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.textBox4, 3);
+            this.textBox4.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox4.Location = new System.Drawing.Point(710, 286);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(257, 21);
@@ -367,6 +370,7 @@
             // textBox3
             // 
             this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox3.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox3.Location = new System.Drawing.Point(380, 124);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(86, 21);
@@ -499,6 +503,7 @@
             // 
             this.textBox11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.textBox11, 3);
+            this.textBox11.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox11.Location = new System.Drawing.Point(710, 178);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(257, 21);
@@ -507,6 +512,7 @@
             // textBox12
             // 
             this.textBox12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox12.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox12.Location = new System.Drawing.Point(380, 232);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(86, 21);
@@ -516,6 +522,7 @@
             // 
             this.textBox13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.textBox13, 3);
+            this.textBox13.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox13.Location = new System.Drawing.Point(710, 232);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(257, 21);
@@ -525,6 +532,7 @@
             // 
             this.textBox14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.textBox14, 3);
+            this.textBox14.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox14.Location = new System.Drawing.Point(380, 286);
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(251, 21);
@@ -536,6 +544,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.textBox15, 7);
+            this.textBox15.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox15.Location = new System.Drawing.Point(380, 327);
             this.textBox15.Multiline = true;
             this.textBox15.Name = "textBox15";
@@ -647,6 +656,7 @@
             // 
             this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.textBox5, 3);
+            this.textBox5.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox5.Location = new System.Drawing.Point(710, 70);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(257, 21);
@@ -685,6 +695,7 @@
             // textBox1
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox1.Location = new System.Drawing.Point(98, 16);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(51, 21);
@@ -876,6 +887,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.SetColumnSpan(this.textBox6, 2);
+            this.textBox6.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox6.Location = new System.Drawing.Point(100, 164);
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
@@ -889,6 +901,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.SetColumnSpan(this.textBox7, 2);
+            this.textBox7.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox7.Location = new System.Drawing.Point(585, 164);
             this.textBox7.Multiline = true;
             this.textBox7.Name = "textBox7";
@@ -902,6 +915,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.SetColumnSpan(this.textBox8, 2);
+            this.textBox8.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox8.Location = new System.Drawing.Point(100, 228);
             this.textBox8.Multiline = true;
             this.textBox8.Name = "textBox8";
@@ -1034,6 +1048,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.SetColumnSpan(this.textBox9, 2);
+            this.textBox9.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox9.Location = new System.Drawing.Point(100, 292);
             this.textBox9.Multiline = true;
             this.textBox9.Name = "textBox9";
@@ -1047,6 +1062,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.SetColumnSpan(this.textBox10, 2);
+            this.textBox10.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox10.Location = new System.Drawing.Point(585, 292);
             this.textBox10.Multiline = true;
             this.textBox10.Name = "textBox10";
@@ -1060,6 +1076,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.SetColumnSpan(this.textBox16, 2);
+            this.textBox16.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox16.Location = new System.Drawing.Point(100, 356);
             this.textBox16.Multiline = true;
             this.textBox16.Name = "textBox16";
@@ -1073,6 +1090,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.SetColumnSpan(this.textBox17, 2);
+            this.textBox17.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox17.Location = new System.Drawing.Point(585, 356);
             this.textBox17.Multiline = true;
             this.textBox17.Name = "textBox17";
@@ -1086,6 +1104,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.SetColumnSpan(this.textBox18, 2);
+            this.textBox18.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox18.Location = new System.Drawing.Point(100, 420);
             this.textBox18.Multiline = true;
             this.textBox18.Name = "textBox18";
@@ -1099,6 +1118,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.SetColumnSpan(this.textBox19, 2);
+            this.textBox19.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox19.Location = new System.Drawing.Point(585, 420);
             this.textBox19.Multiline = true;
             this.textBox19.Name = "textBox19";
@@ -1112,6 +1132,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.SetColumnSpan(this.textBox20, 2);
+            this.textBox20.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox20.Location = new System.Drawing.Point(100, 484);
             this.textBox20.Multiline = true;
             this.textBox20.Name = "textBox20";
@@ -1125,6 +1146,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.SetColumnSpan(this.textBox21, 2);
+            this.textBox21.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox21.Location = new System.Drawing.Point(585, 228);
             this.textBox21.Multiline = true;
             this.textBox21.Name = "textBox21";
@@ -1302,6 +1324,7 @@
             this.tableLayoutPanel3.Controls.Add(this.label43, 0, 8);
             this.tableLayoutPanel3.Controls.Add(this.label46, 2, 8);
             this.tableLayoutPanel3.Controls.Add(this.label48, 10, 1);
+            this.tableLayoutPanel3.Controls.Add(this.button8, 9, 9);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -1489,6 +1512,7 @@
             // 
             this.textBox22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox22.Enabled = false;
+            this.textBox22.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox22.Location = new System.Drawing.Point(844, 127);
             this.textBox22.Name = "textBox22";
             this.textBox22.Size = new System.Drawing.Size(91, 21);
@@ -1498,6 +1522,7 @@
             // 
             this.textBox23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox23.Enabled = false;
+            this.textBox23.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox23.Location = new System.Drawing.Point(844, 182);
             this.textBox23.Name = "textBox23";
             this.textBox23.Size = new System.Drawing.Size(91, 21);
@@ -1507,6 +1532,7 @@
             // 
             this.textBox24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox24.Enabled = false;
+            this.textBox24.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox24.Location = new System.Drawing.Point(844, 237);
             this.textBox24.Name = "textBox24";
             this.textBox24.Size = new System.Drawing.Size(91, 21);
@@ -1516,6 +1542,7 @@
             // 
             this.textBox25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox25.Enabled = false;
+            this.textBox25.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox25.Location = new System.Drawing.Point(844, 292);
             this.textBox25.Name = "textBox25";
             this.textBox25.Size = new System.Drawing.Size(91, 21);
@@ -1525,6 +1552,7 @@
             // 
             this.textBox26.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox26.Enabled = false;
+            this.textBox26.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox26.Location = new System.Drawing.Point(844, 347);
             this.textBox26.Name = "textBox26";
             this.textBox26.Size = new System.Drawing.Size(91, 21);
@@ -1635,6 +1663,19 @@
             this.label48.Size = new System.Drawing.Size(41, 12);
             this.label48.TabIndex = 29;
             this.label48.Text = "0.00元";
+            // 
+            // button8
+            // 
+            this.button8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableLayoutPanel3.SetColumnSpan(this.button8, 2);
+            this.button8.Enabled = false;
+            this.button8.Location = new System.Drawing.Point(803, 511);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.TabIndex = 30;
+            this.button8.Text = "导入模板";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // tabPage4
             // 
@@ -1827,6 +1868,7 @@
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Button button8;
     }
 }
 

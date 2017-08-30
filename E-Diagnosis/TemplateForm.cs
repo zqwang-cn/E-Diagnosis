@@ -14,6 +14,7 @@ namespace E_Diagnosis
     {
         private DiagnosisContext db;
         private Template template;
+        public Template selected_template;
 
         public TemplateForm(DiagnosisContext db)
         {
@@ -121,10 +122,12 @@ namespace E_Diagnosis
                 item.名称 = mf.result_medicine;
                 item.数量 = mf.result_amount;
                 this.template.items.Add(item);
+                db.SaveChanges();
                 set_items();
             }
         }
 
+        //删除药品
         private void button4_Click(object sender, EventArgs e)
         {
             if (dataGridView2.SelectedRows.Count == 0)
@@ -134,7 +137,21 @@ namespace E_Diagnosis
             else if(MessageBox.Show("是否确认删除？", "确认信息", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 this.template.items.Remove((TemplateItem)dataGridView2.SelectedRows[0].DataBoundItem);
+                db.SaveChanges();
                 set_items();
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("请选择模板！", "提示信息");
+            }
+            else
+            {
+                this.selected_template = (Template)dataGridView1.SelectedRows[0].DataBoundItem;
+                this.Close();
             }
         }
     }

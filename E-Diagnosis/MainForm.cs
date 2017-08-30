@@ -81,6 +81,7 @@ namespace E_Diagnosis
             textBox25.Enabled = editable;
             textBox26.Enabled = editable;
             button7.Enabled = editable;
+            button8.Enabled = editable;
             button12.Enabled = !editable;
         }
 
@@ -153,11 +154,6 @@ namespace E_Diagnosis
                 dataGridView4.Columns[1].Visible = false;
 
                 label48.Text = (this.record.wprescription.price + this.record.cprescription.price * this.record.cprescription.amount).ToString() + "元";
-                textBox22.Text = this.record.医师;
-                textBox23.Text = this.record.调配;
-                textBox24.Text = this.record.审核;
-                textBox25.Text = this.record.核对;
-                textBox26.Text = this.record.发药;
             }
             else
             {
@@ -167,11 +163,6 @@ namespace E_Diagnosis
                 label47.Text = "0元";
                 label48.Text = "0元";
                 numericUpDown3.Value = 1;
-                textBox22.Text = "";
-                textBox23.Text = "";
-                textBox24.Text = "";
-                textBox25.Text = "";
-                textBox26.Text = "";
                 set_prescription_editable(false);
                 button12.Enabled = false;
             }
@@ -196,6 +187,11 @@ namespace E_Diagnosis
                 textBox18.Text = "";
                 textBox19.Text = "";
                 textBox20.Text = "";
+                textBox22.Text = "";
+                textBox23.Text = "";
+                textBox24.Text = "";
+                textBox25.Text = "";
+                textBox26.Text = "";
                 set_record_editable(true);
                 button11.Enabled = false;
                 button2.Enabled = true;
@@ -216,6 +212,11 @@ namespace E_Diagnosis
                 textBox18.Text = r.临床诊断;
                 textBox19.Text = r.治疗意见;
                 textBox20.Text = r.说明;
+                textBox22.Text = r.医师;
+                textBox23.Text = r.调配;
+                textBox24.Text = r.审核;
+                textBox25.Text = r.核对;
+                textBox26.Text = r.发药;
                 set_record_editable(false);
                 button11.Enabled = true;
                 button2.Enabled = false;
@@ -355,6 +356,7 @@ namespace E_Diagnosis
                     item.prescription = p;
                     p.items.Add(item);
                     p.price += item.小计;
+                    db.SaveChanges();
                     set_prescriptions();
                 }
             }
@@ -563,6 +565,7 @@ namespace E_Diagnosis
             if (this.record != null)
             {
                 this.record.cprescription.amount = (int)numericUpDown3.Value;
+                db.SaveChanges();
                 set_prescriptions();
             }
         }
@@ -593,6 +596,32 @@ namespace E_Diagnosis
             reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("witems", this.record.wprescription.items.ToList()));
             reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("citems", this.record.cprescription.items.ToList()));
             reportViewer1.RefreshReport();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (this.record == null)
+            {
+                MessageBox.Show("请先选择病人与病历！", "提示信息");
+                return;
+            }
+            TemplateForm tf = new TemplateForm(db);
+            tf.ShowDialog();
+            Template t = tf.selected_template;
+            if (t != null)
+            {
+                foreach (TemplateItem titem in t.items)
+                {
+                    Item item = new Item();
+                    item.名称 = titem.名称.名称;
+                    item.单价 = titem.名称.价格;
+                    item.数量 = titem.数量;
+                    item.小计 = item.单价 * item.数量;
+                    this.record.cprescription.items.Add(item);
+                }
+                db.SaveChanges();
+                set_prescriptions();
+            }
         }
     }
 }

@@ -169,6 +169,7 @@
             // textBox1
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox1.Location = new System.Drawing.Point(224, 42);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(133, 21);
@@ -180,6 +181,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.textBox3, 3);
+            this.textBox3.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox3.Location = new System.Drawing.Point(224, 90);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
@@ -214,6 +216,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.textBox4, 3);
+            this.textBox4.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox4.Location = new System.Drawing.Point(224, 228);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
@@ -274,6 +277,7 @@
             // textBox2
             // 
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox2.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox2.Location = new System.Drawing.Point(418, 42);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(133, 21);
@@ -301,6 +305,7 @@
             this.button5.TabIndex = 17;
             this.button5.Text = "选择模板";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // label8
             // 
@@ -315,6 +320,7 @@
             // textBox5
             // 
             this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox5.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox5.Location = new System.Drawing.Point(86, 42);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(77, 21);
