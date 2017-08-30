@@ -235,7 +235,7 @@ namespace E_Diagnosis
     {
         public int id { get; set; }
         public virtual Template template { get; set; }
-        public virtual Medicine 名称 { get; set; }
+        public virtual Medicine 药品 { get; set; }
         public decimal 数量 { get; set; }
     }
 

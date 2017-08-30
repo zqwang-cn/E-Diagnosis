@@ -140,7 +140,7 @@ namespace E_Diagnosis
             else
             {
                 this.result_medicine = l[selected];
-                this.result_amount = numericUpDown2.Value;
+                this.result_amount = decimal.Round(numericUpDown2.Value + 0.0M, 1);
                 this.Close();
             }
         }

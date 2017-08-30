@@ -343,7 +343,7 @@ namespace E_Diagnosis
                     item.名称 = mf.result_medicine.名称;
                     item.单价 = mf.result_medicine.价格;
                     item.数量 = mf.result_amount;
-                    item.小计 = item.单价 * item.数量;
+                    item.小计 = decimal.Round(item.单价 * item.数量 + 0.00M, 2);
                     Prescription p;
                     if (mf.result_medicine.category == Category.中成药与西药)
                     {
@@ -353,7 +353,6 @@ namespace E_Diagnosis
                     {
                         p = this.record.cprescription;
                     }
-                    item.prescription = p;
                     p.items.Add(item);
                     p.price += item.小计;
                     db.SaveChanges();
@@ -613,11 +612,12 @@ namespace E_Diagnosis
                 foreach (TemplateItem titem in t.items)
                 {
                     Item item = new Item();
-                    item.名称 = titem.名称.名称;
-                    item.单价 = titem.名称.价格;
+                    item.名称 = titem.药品.名称;
+                    item.单价 = titem.药品.价格;
                     item.数量 = titem.数量;
-                    item.小计 = item.单价 * item.数量;
+                    item.小计 = decimal.Round(item.单价 * item.数量 + 0.00M, 2);
                     this.record.cprescription.items.Add(item);
+                    this.record.cprescription.price += item.小计;
                 }
                 db.SaveChanges();
                 set_prescriptions();

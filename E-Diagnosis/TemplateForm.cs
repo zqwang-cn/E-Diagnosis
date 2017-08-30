@@ -119,7 +119,7 @@ namespace E_Diagnosis
             if (mf.result_medicine != null)
             {
                 TemplateItem item = new TemplateItem();
-                item.名称 = mf.result_medicine;
+                item.药品 = mf.result_medicine;
                 item.数量 = mf.result_amount;
                 this.template.items.Add(item);
                 db.SaveChanges();
