@@ -82,6 +82,7 @@ namespace E_Diagnosis
             textBox26.Enabled = editable;
             button7.Enabled = editable;
             button8.Enabled = editable;
+            button14.Enabled = !editable;
             button12.Enabled = !editable;
         }
 
@@ -128,16 +129,6 @@ namespace E_Diagnosis
             reportViewer1.RefreshReport();
             if (this.record != null)
             {
-                //如果处方未保存，则可以编辑，否则不可编辑
-                if (this.record.finished)
-                {
-                    set_prescription_editable(false);
-                }
-                else
-                {
-                    set_prescription_editable(true);
-                }
-
                 //wprescription
                 label46.Text = this.record.wprescription.price.ToString() + "元";
                 dataGridView3.DataSource = this.record.wprescription.items.ToList();
@@ -194,6 +185,7 @@ namespace E_Diagnosis
                 textBox26.Text = "";
                 set_record_editable(true);
                 button11.Enabled = false;
+                button13.Enabled = false;
                 button2.Enabled = true;
             }
             else
@@ -219,6 +211,7 @@ namespace E_Diagnosis
                 textBox26.Text = r.发药;
                 set_record_editable(false);
                 button11.Enabled = true;
+                button13.Enabled = true;
                 button2.Enabled = false;
             }
             set_prescriptions();
@@ -519,34 +512,71 @@ namespace E_Diagnosis
             set_record(null);
         }
 
-        //保存新病历
+        private void button13_Click(object sender, EventArgs e)
+        {
+            set_record_editable(true);
+            button11.Enabled = true;
+            button13.Enabled = false;
+            button2.Enabled = true;
+        }
+
+        //保存病历
         private void button2_Click(object sender, EventArgs e)
         {
-            Record r = new Record();
-            r.patient = this.patient;
-            r.类型 = (string)comboBox2.SelectedItem;
-            r.科别 = (string)comboBox7.SelectedItem;
-            r.就诊日期 = dateTimePicker1.Value;
-            r.主诉 = textBox6.Text;
-            r.现病史 = textBox7.Text;
-            r.既往史 = textBox8.Text;
-            r.个人史 = textBox21.Text;
-            r.家族史 = textBox9.Text;
-            r.月经及婚育史 = textBox10.Text;
-            r.体格检查 = textBox16.Text;
-            r.辅助检查 = textBox17.Text;
-            r.临床诊断 = textBox18.Text;
-            r.治疗意见 = textBox19.Text;
-            r.说明 = textBox20.Text;
-            r.wprescription = new Prescription();
-            r.cprescription = new Prescription();
-            this.patient.records.Add(r);
+            if (this.record == null)
+            {
+                Record r = new Record();
+                r.patient = this.patient;
+                r.类型 = (string)comboBox2.SelectedItem;
+                r.科别 = (string)comboBox7.SelectedItem;
+                r.就诊日期 = dateTimePicker1.Value;
+                r.主诉 = textBox6.Text;
+                r.现病史 = textBox7.Text;
+                r.既往史 = textBox8.Text;
+                r.个人史 = textBox21.Text;
+                r.家族史 = textBox9.Text;
+                r.月经及婚育史 = textBox10.Text;
+                r.体格检查 = textBox16.Text;
+                r.辅助检查 = textBox17.Text;
+                r.临床诊断 = textBox18.Text;
+                r.治疗意见 = textBox19.Text;
+                r.说明 = textBox20.Text;
+                r.wprescription = new Prescription();
+                r.cprescription = new Prescription();
+                this.patient.records.Add(r);
+            }
+            else
+            {
+                Record r = this.record;
+                //r.patient = this.patient;
+                r.类型 = (string)comboBox2.SelectedItem;
+                r.科别 = (string)comboBox7.SelectedItem;
+                r.就诊日期 = dateTimePicker1.Value;
+                r.主诉 = textBox6.Text;
+                r.现病史 = textBox7.Text;
+                r.既往史 = textBox8.Text;
+                r.个人史 = textBox21.Text;
+                r.家族史 = textBox9.Text;
+                r.月经及婚育史 = textBox10.Text;
+                r.体格检查 = textBox16.Text;
+                r.辅助检查 = textBox17.Text;
+                r.临床诊断 = textBox18.Text;
+                r.治疗意见 = textBox19.Text;
+                r.说明 = textBox20.Text;
+            }
             db.SaveChanges();
             set_records();
         }
 
         /*-----------处方页面的操作-------------*/
 
+        //编辑处方
+        private void button14_Click(object sender, EventArgs e)
+        {
+            set_prescription_editable(true);
+        }
+
+        //保存处方
         private void button7_Click(object sender, EventArgs e)
         {
             this.record.医师 = textBox22.Text;
@@ -554,7 +584,6 @@ namespace E_Diagnosis
             this.record.审核 = textBox24.Text;
             this.record.核对 = textBox25.Text;
             this.record.发药 = textBox26.Text;
-            this.record.finished = true;
             db.SaveChanges();
             set_prescription_editable(false);
         }

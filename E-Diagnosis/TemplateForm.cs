@@ -30,6 +30,9 @@ namespace E_Diagnosis
             dataGridView1.DataSource = query.ToList();
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].Visible = false;
+            dataGridView1.Columns[3].Visible = false;
+            dataGridView1.Columns[4].Visible = false;
+            dataGridView1.Columns[5].Visible = false;
             dataGridView1.ClearSelection();
             this.template = new Template();
             set_template();

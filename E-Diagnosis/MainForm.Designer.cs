@@ -102,8 +102,6 @@
             this.textBox19 = new System.Windows.Forms.TextBox();
             this.textBox20 = new System.Windows.Forms.TextBox();
             this.textBox21 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label11 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -111,6 +109,9 @@
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
@@ -142,9 +143,11 @@
             this.label48 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.button12 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.button12 = new System.Windows.Forms.Button();
             this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button14 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -162,6 +165,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             this.tabPage4.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -816,13 +820,15 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 6;
+            this.tableLayoutPanel2.ColumnCount = 8;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel2.Controls.Add(this.label7, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.textBox6, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.textBox7, 4, 3);
@@ -846,9 +852,10 @@
             this.tableLayoutPanel2.Controls.Add(this.textBox19, 4, 11);
             this.tableLayoutPanel2.Controls.Add(this.textBox20, 1, 13);
             this.tableLayoutPanel2.Controls.Add(this.textBox21, 4, 5);
-            this.tableLayoutPanel2.Controls.Add(this.button2, 5, 13);
-            this.tableLayoutPanel2.Controls.Add(this.button11, 4, 13);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.button11, 4, 13);
+            this.tableLayoutPanel2.Controls.Add(this.button2, 6, 13);
+            this.tableLayoutPanel2.Controls.Add(this.button13, 5, 13);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -867,7 +874,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(970, 544);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
@@ -900,7 +906,7 @@
             this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.SetColumnSpan(this.textBox7, 2);
+            this.tableLayoutPanel2.SetColumnSpan(this.textBox7, 4);
             this.textBox7.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox7.Location = new System.Drawing.Point(585, 164);
             this.textBox7.Multiline = true;
@@ -931,7 +937,7 @@
             this.dataGridView2.AllowUserToResizeRows = false;
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableLayoutPanel2.SetColumnSpan(this.dataGridView2, 6);
+            this.tableLayoutPanel2.SetColumnSpan(this.dataGridView2, 8);
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(3, 3);
             this.dataGridView2.MultiSelect = false;
@@ -1061,7 +1067,7 @@
             this.textBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.SetColumnSpan(this.textBox10, 2);
+            this.tableLayoutPanel2.SetColumnSpan(this.textBox10, 4);
             this.textBox10.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox10.Location = new System.Drawing.Point(585, 292);
             this.textBox10.Multiline = true;
@@ -1089,7 +1095,7 @@
             this.textBox17.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.SetColumnSpan(this.textBox17, 2);
+            this.tableLayoutPanel2.SetColumnSpan(this.textBox17, 4);
             this.textBox17.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox17.Location = new System.Drawing.Point(585, 356);
             this.textBox17.Multiline = true;
@@ -1117,7 +1123,7 @@
             this.textBox19.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.SetColumnSpan(this.textBox19, 2);
+            this.tableLayoutPanel2.SetColumnSpan(this.textBox19, 4);
             this.textBox19.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox19.Location = new System.Drawing.Point(585, 420);
             this.textBox19.Multiline = true;
@@ -1145,7 +1151,7 @@
             this.textBox21.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.SetColumnSpan(this.textBox21, 2);
+            this.tableLayoutPanel2.SetColumnSpan(this.textBox21, 4);
             this.textBox21.ImeMode = System.Windows.Forms.ImeMode.On;
             this.textBox21.Location = new System.Drawing.Point(585, 228);
             this.textBox21.Multiline = true;
@@ -1154,37 +1160,13 @@
             this.textBox21.Size = new System.Drawing.Size(382, 48);
             this.textBox21.TabIndex = 27;
             // 
-            // button2
-            // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(835, 501);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "保存";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button11
-            // 
-            this.button11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button11.Enabled = false;
-            this.button11.Location = new System.Drawing.Point(641, 501);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 23);
-            this.button11.TabIndex = 28;
-            this.button11.Text = "新建病历";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel4.ColumnCount = 6;
-            this.tableLayoutPanel2.SetColumnSpan(this.tableLayoutPanel4, 6);
+            this.tableLayoutPanel2.SetColumnSpan(this.tableLayoutPanel4, 8);
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.00001F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.33332F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.00001F));
@@ -1272,6 +1254,42 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(151, 21);
             this.dateTimePicker1.TabIndex = 10;
             // 
+            // button11
+            // 
+            this.button11.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button11.Enabled = false;
+            this.button11.Location = new System.Drawing.Point(593, 501);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(75, 23);
+            this.button11.TabIndex = 28;
+            this.button11.Text = "新建";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // button2
+            // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button2.Enabled = false;
+            this.button2.Location = new System.Drawing.Point(787, 501);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "保存";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button13
+            // 
+            this.button13.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button13.Enabled = false;
+            this.button13.Location = new System.Drawing.Point(690, 501);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(75, 23);
+            this.button13.TabIndex = 30;
+            this.button13.Text = "编辑";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.tableLayoutPanel3);
@@ -1316,7 +1334,7 @@
             this.tableLayoutPanel3.Controls.Add(this.textBox25, 10, 5);
             this.tableLayoutPanel3.Controls.Add(this.textBox26, 10, 6);
             this.tableLayoutPanel3.Controls.Add(this.label42, 9, 1);
-            this.tableLayoutPanel3.Controls.Add(this.button7, 9, 7);
+            this.tableLayoutPanel3.Controls.Add(this.button7, 10, 7);
             this.tableLayoutPanel3.Controls.Add(this.label44, 7, 8);
             this.tableLayoutPanel3.Controls.Add(this.label45, 5, 8);
             this.tableLayoutPanel3.Controls.Add(this.numericUpDown3, 6, 8);
@@ -1325,6 +1343,7 @@
             this.tableLayoutPanel3.Controls.Add(this.label46, 2, 8);
             this.tableLayoutPanel3.Controls.Add(this.label48, 10, 1);
             this.tableLayoutPanel3.Controls.Add(this.button8, 9, 9);
+            this.tableLayoutPanel3.Controls.Add(this.button14, 9, 7);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -1571,9 +1590,8 @@
             // button7
             // 
             this.button7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tableLayoutPanel3.SetColumnSpan(this.button7, 2);
             this.button7.Enabled = false;
-            this.button7.Location = new System.Drawing.Point(803, 401);
+            this.button7.Location = new System.Drawing.Point(852, 401);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 23);
             this.button7.TabIndex = 22;
@@ -1679,8 +1697,7 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.button12);
-            this.tabPage4.Controls.Add(this.reportViewer1);
+            this.tabPage4.Controls.Add(this.tableLayoutPanel5);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(976, 550);
@@ -1688,29 +1705,59 @@
             this.tabPage4.Text = "导出";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Controls.Add(this.reportViewer1, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.button12, 0, 1);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 95F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(976, 550);
+            this.tableLayoutPanel5.TabIndex = 2;
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.DocumentMapWidth = 92;
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "E_Diagnosis.whole.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(3, 3);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(970, 516);
+            this.reportViewer1.TabIndex = 0;
+            // 
             // button12
             // 
+            this.button12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button12.Enabled = false;
-            this.button12.Location = new System.Drawing.Point(475, 519);
+            this.button12.Location = new System.Drawing.Point(450, 525);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(75, 23);
+            this.button12.Size = new System.Drawing.Size(75, 22);
             this.button12.TabIndex = 1;
             this.button12.Text = "生成预览";
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
-            // reportViewer1
-            // 
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "E_Diagnosis.whole.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(25, 12);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(923, 490);
-            this.reportViewer1.TabIndex = 0;
-            // 
             // patientBindingSource
             // 
             this.patientBindingSource.DataSource = typeof(E_Diagnosis.Patient);
+            // 
+            // button14
+            // 
+            this.button14.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button14.Enabled = false;
+            this.button14.Location = new System.Drawing.Point(755, 401);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(75, 23);
+            this.button14.TabIndex = 31;
+            this.button14.Text = "编辑";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // MainForm
             // 
@@ -1745,6 +1792,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             this.tabPage4.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1869,6 +1917,9 @@
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button14;
     }
 }
 

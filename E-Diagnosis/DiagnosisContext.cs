@@ -212,8 +212,8 @@ namespace E_Diagnosis
         public int id { get; set; }
         public virtual Prescription prescription { get; set; }
         public string 名称 { get; set; }
-        public decimal 单价 { get; set; }
         public decimal 数量 { get; set; }
+        public decimal 单价 { get; set; }
         public decimal 小计 { get; set; }
     }
 
