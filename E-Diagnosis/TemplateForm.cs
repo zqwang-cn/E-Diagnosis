@@ -33,6 +33,7 @@ namespace E_Diagnosis
             dataGridView1.Columns[3].Visible = false;
             dataGridView1.Columns[4].Visible = false;
             dataGridView1.Columns[5].Visible = false;
+            dataGridView1.Columns[6].Visible = false;
             dataGridView1.ClearSelection();
             this.template = new Template();
             set_template();
@@ -92,6 +93,7 @@ namespace E_Diagnosis
             this.template.功用 = textBox2.Text;
             this.template.主治 = textBox3.Text;
             this.template.备注 = textBox4.Text;
+            this.template.keywords = textBox6.Text;
             if (!((ICollection<Template>)dataGridView1.DataSource).Contains(this.template))
             {
                 db.template_set.Add(this.template);

@@ -31,60 +31,60 @@ namespace E_Diagnosis
             reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
         }
 
-        private void set_patient_editable(bool editable)
-        {
-            comboBox3.Enabled = editable;
-            textBox5.Enabled = editable;
-            textBox3.Enabled = editable;
-            comboBox1.Enabled = editable;
-            numericUpDown1.Enabled = editable;
-            numericUpDown2.Enabled = editable;
-            comboBox4.Enabled = editable;
-            comboBox5.Enabled = editable;
-            textBox11.Enabled = editable;
-            textBox12.Enabled = editable;
-            comboBox6.Enabled = editable;
-            textBox13.Enabled = editable;
-            textBox14.Enabled = editable;
-            textBox4.Enabled = editable;
-            textBox15.Enabled = editable;
-        }
+        //private void set_patient_editable(bool editable)
+        //{
+        //    comboBox3.Enabled = editable;
+        //    textBox5.Enabled = editable;
+        //    textBox3.Enabled = editable;
+        //    comboBox1.Enabled = editable;
+        //    numericUpDown1.Enabled = editable;
+        //    numericUpDown2.Enabled = editable;
+        //    comboBox4.Enabled = editable;
+        //    comboBox5.Enabled = editable;
+        //    textBox11.Enabled = editable;
+        //    textBox12.Enabled = editable;
+        //    comboBox6.Enabled = editable;
+        //    textBox13.Enabled = editable;
+        //    textBox14.Enabled = editable;
+        //    textBox4.Enabled = editable;
+        //    textBox15.Enabled = editable;
+        //}
 
-        private void set_record_editable(bool editable)
-        {
-            comboBox2.Enabled = editable;
-            comboBox7.Enabled = editable;
-            dateTimePicker1.Enabled = editable;
-            textBox6.Enabled = editable;
-            textBox7.Enabled = editable;
-            textBox8.Enabled = editable;
-            textBox21.Enabled = editable;
-            textBox9.Enabled = editable;
-            textBox10.Enabled = editable;
-            textBox16.Enabled = editable;
-            textBox17.Enabled = editable;
-            textBox18.Enabled = editable;
-            textBox19.Enabled = editable;
-            textBox20.Enabled = editable;
-        }
+        //private void set_record_editable(bool editable)
+        //{
+        //    comboBox2.Enabled = editable;
+        //    comboBox7.Enabled = editable;
+        //    dateTimePicker1.Enabled = editable;
+        //    textBox6.Enabled = editable;
+        //    textBox7.Enabled = editable;
+        //    textBox8.Enabled = editable;
+        //    textBox21.Enabled = editable;
+        //    textBox9.Enabled = editable;
+        //    textBox10.Enabled = editable;
+        //    textBox16.Enabled = editable;
+        //    textBox17.Enabled = editable;
+        //    textBox18.Enabled = editable;
+        //    textBox19.Enabled = editable;
+        //    textBox20.Enabled = editable;
+        //}
 
-        private void set_prescription_editable(bool editable)
-        {
-            button3.Enabled = editable;
-            button4.Enabled = editable;
-            button5.Enabled = editable;
-            button6.Enabled = editable;
-            numericUpDown3.Enabled = editable;
-            textBox22.Enabled = editable;
-            textBox23.Enabled = editable;
-            textBox24.Enabled = editable;
-            textBox25.Enabled = editable;
-            textBox26.Enabled = editable;
-            button7.Enabled = editable;
-            button8.Enabled = editable;
-            button14.Enabled = !editable;
-            button12.Enabled = !editable;
-        }
+        //private void set_prescription_editable(bool editable)
+        //{
+        //    button3.Enabled = editable;
+        //    button4.Enabled = editable;
+        //    button5.Enabled = editable;
+        //    button6.Enabled = editable;
+        //    numericUpDown3.Enabled = editable;
+        //    textBox22.Enabled = editable;
+        //    textBox23.Enabled = editable;
+        //    textBox24.Enabled = editable;
+        //    textBox25.Enabled = editable;
+        //    textBox26.Enabled = editable;
+        //    button7.Enabled = editable;
+        //    button8.Enabled = editable;
+        //    button14.Enabled = !editable;
+        //    button12.Enabled = !editable;
+        //}
 
         //刷新用户列表
         private void refresh()
@@ -135,6 +135,7 @@ namespace E_Diagnosis
                 dataGridView3.ClearSelection();
                 dataGridView3.Columns[0].Visible = false;
                 dataGridView3.Columns[1].Visible = false;
+                dataGridView3.Columns[2].Visible = false;
 
                 //cprescription
                 numericUpDown3.Value = this.record.cprescription.amount;
@@ -143,6 +144,7 @@ namespace E_Diagnosis
                 dataGridView4.ClearSelection();
                 dataGridView4.Columns[0].Visible = false;
                 dataGridView4.Columns[1].Visible = false;
+                dataGridView4.Columns[2].Visible = false;
 
                 label48.Text = (this.record.wprescription.price + this.record.cprescription.price * this.record.cprescription.amount).ToString() + "元";
             }
@@ -154,8 +156,6 @@ namespace E_Diagnosis
                 label47.Text = "0元";
                 label48.Text = "0元";
                 numericUpDown3.Value = 1;
-                set_prescription_editable(false);
-                button12.Enabled = false;
             }
         }
 
@@ -183,10 +183,7 @@ namespace E_Diagnosis
                 textBox24.Text = "";
                 textBox25.Text = "";
                 textBox26.Text = "";
-                set_record_editable(true);
-                button11.Enabled = false;
-                button13.Enabled = false;
-                button2.Enabled = true;
+                dataGridView5.DataSource = null;
             }
             else
             {
@@ -209,10 +206,6 @@ namespace E_Diagnosis
                 textBox24.Text = r.审核;
                 textBox25.Text = r.核对;
                 textBox26.Text = r.发药;
-                set_record_editable(false);
-                button11.Enabled = true;
-                button13.Enabled = true;
-                button2.Enabled = false;
             }
             set_prescriptions();
         }
@@ -251,14 +244,28 @@ namespace E_Diagnosis
                 dataGridView2.Columns[21].Visible = false;
                 dataGridView2.Columns[22].Visible = false;
                 dataGridView2.Columns[23].Visible = false;
-                if (dataGridView2.Rows.Count > 0)
+                if (this.record != null && this.record.patient == this.patient)
                 {
-                    dataGridView2.Rows[dataGridView2.Rows.Count - 1].Selected = true;
-                    set_record(((List<Record>)this.patient.records)[dataGridView2.Rows.Count - 1]);
+                    foreach (DataGridViewRow row in dataGridView2.Rows)
+                    {
+                        if (this.record == (Record)row.DataBoundItem)
+                        {
+                            row.Selected = true;
+                            break;
+                        }
+                    }
                 }
                 else
                 {
-                    set_record(null);
+                    if (dataGridView2.Rows.Count > 0)
+                    {
+                        dataGridView2.Rows[dataGridView2.Rows.Count - 1].Selected = true;
+                        set_record(((List<Record>)this.patient.records)[dataGridView2.Rows.Count - 1]);
+                    }
+                    else
+                    {
+                        set_record(null);
+                    }
                 }
             }
         }
@@ -320,7 +327,37 @@ namespace E_Diagnosis
             tf.ShowDialog();
         }
 
-        private void add_item(Category c)
+        private void add_item(Prescription pre, Medicine medicine, decimal amount)
+        {
+            bool found = false;
+            foreach(Item item in pre.items)
+            {
+                if (item.medicine == medicine && item.名称==medicine.名称 && item.单价 == medicine.价格)
+                {
+                    item.数量 += amount;
+                    decimal extra= decimal.Round(medicine.价格 * amount + 0.00M, 2);
+                    item.小计 += extra;
+                    pre.price += extra;
+                    found = true;
+                    break;
+                }
+            }
+            if (!found)
+            {
+                Item item = new Item();
+                item.medicine = medicine;
+                item.名称 = medicine.名称;
+                item.单价 = medicine.价格;
+                item.数量 = amount;
+                item.小计 = decimal.Round(item.单价 * item.数量 + 0.00M, 2);
+                pre.items.Add(item);
+                pre.price += item.小计;
+            }
+            db.SaveChanges();
+            set_prescriptions();
+        }
+
+        private void start_add_item(Category c)
         {
             if (this.record == null)
             {
@@ -332,11 +369,6 @@ namespace E_Diagnosis
                 mf.ShowDialog();
                 if (mf.result_medicine != null)
                 {
-                    Item item = new Item();
-                    item.名称 = mf.result_medicine.名称;
-                    item.单价 = mf.result_medicine.价格;
-                    item.数量 = mf.result_amount;
-                    item.小计 = decimal.Round(item.单价 * item.数量 + 0.00M, 2);
                     Prescription p;
                     if (mf.result_medicine.category == Category.中成药与西药)
                     {
@@ -346,10 +378,18 @@ namespace E_Diagnosis
                     {
                         p = this.record.cprescription;
                     }
-                    p.items.Add(item);
-                    p.price += item.小计;
-                    db.SaveChanges();
-                    set_prescriptions();
+                    add_item(p, mf.result_medicine, mf.result_amount);
+
+                    //Item item = new Item();
+                    //item.medicine = mf.result_medicine;
+                    //item.名称 = mf.result_medicine.名称;
+                    //item.单价 = mf.result_medicine.价格;
+                    //item.数量 = mf.result_amount;
+                    //item.小计 = decimal.Round(item.单价 * item.数量 + 0.00M, 2);
+                    //p.items.Add(item);
+                    //p.price += item.小计;
+                    //db.SaveChanges();
+                    //set_prescriptions();
                 }
             }
         }
@@ -383,7 +423,7 @@ namespace E_Diagnosis
 
         private void button3_Click(object sender, EventArgs e)
         {
-            add_item(Category.中成药与西药);
+            start_add_item(Category.中成药与西药);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -393,7 +433,7 @@ namespace E_Diagnosis
 
         private void button5_Click(object sender, EventArgs e)
         {
-            add_item(Category.中药);
+            start_add_item(Category.中药);
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -419,10 +459,6 @@ namespace E_Diagnosis
             if (e.RowIndex == -1)
                 return;
             set_patient(l[e.RowIndex]);
-            set_patient_editable(false);
-            button9.Enabled = true;
-            button10.Enabled = true;
-            button1.Enabled = false;
         }
 
         //新建病人
@@ -430,19 +466,8 @@ namespace E_Diagnosis
         {
             dataGridView1.ClearSelection();
             set_patient(null);
-            set_patient_editable(true);
-            button9.Enabled = false;
-            button10.Enabled = false;
-            button1.Enabled = true;
         }
 
-        //编辑当前选中的病人
-        private void button10_Click(object sender, EventArgs e)
-        {
-            set_patient_editable(true);
-            button10.Enabled = false;
-            button1.Enabled = true;
-        }
 
         //保存当前病人（新建的或选中的）
         private void button1_Click(object sender, EventArgs e)
@@ -491,10 +516,7 @@ namespace E_Diagnosis
                 db.SaveChanges();
             }
             refresh();
-            set_patient_editable(false);
-            button9.Enabled = true;
-            button10.Enabled = true;
-            button1.Enabled = false;
+            MessageBox.Show("保存成功！", "提示信息");
         }
 
         /*-----------病历页面的操作-------------*/
@@ -509,20 +531,18 @@ namespace E_Diagnosis
         //新建空病历
         private void button11_Click(object sender, EventArgs e)
         {
+            dataGridView2.ClearSelection();
             set_record(null);
-        }
-
-        private void button13_Click(object sender, EventArgs e)
-        {
-            set_record_editable(true);
-            button11.Enabled = true;
-            button13.Enabled = false;
-            button2.Enabled = true;
         }
 
         //保存病历
         private void button2_Click(object sender, EventArgs e)
         {
+            if (this.patient == null)
+            {
+                MessageBox.Show("请先选择病人！", "提示信息");
+                return;
+            }
             if (this.record == null)
             {
                 Record r = new Record();
@@ -541,6 +561,11 @@ namespace E_Diagnosis
                 r.临床诊断 = textBox18.Text;
                 r.治疗意见 = textBox19.Text;
                 r.说明 = textBox20.Text;
+                r.医师 = textBox22.Text;
+                r.调配 = textBox23.Text;
+                r.审核 = textBox24.Text;
+                r.核对 = textBox25.Text;
+                r.发药 = textBox26.Text;
                 r.wprescription = new Prescription();
                 r.cprescription = new Prescription();
                 this.patient.records.Add(r);
@@ -563,36 +588,55 @@ namespace E_Diagnosis
                 r.临床诊断 = textBox18.Text;
                 r.治疗意见 = textBox19.Text;
                 r.说明 = textBox20.Text;
+                r.医师 = textBox22.Text;
+                r.调配 = textBox23.Text;
+                r.审核 = textBox24.Text;
+                r.核对 = textBox25.Text;
+                r.发药 = textBox26.Text;
             }
             db.SaveChanges();
             set_records();
+            MessageBox.Show("保存成功！", "提示信息");
+
         }
 
         /*-----------处方页面的操作-------------*/
-
-        //编辑处方
-        private void button14_Click(object sender, EventArgs e)
-        {
-            set_prescription_editable(true);
-        }
-
-        //保存处方
-        private void button7_Click(object sender, EventArgs e)
-        {
-            this.record.医师 = textBox22.Text;
-            this.record.调配 = textBox23.Text;
-            this.record.审核 = textBox24.Text;
-            this.record.核对 = textBox25.Text;
-            this.record.发药 = textBox26.Text;
-            db.SaveChanges();
-            set_prescription_editable(false);
-        }
-
+        //修改剂数
         private void numericUpDown3_ValueChanged(object sender, EventArgs e)
         {
             if (this.record != null)
             {
                 this.record.cprescription.amount = (int)numericUpDown3.Value;
+                db.SaveChanges();
+                set_prescriptions();
+            }
+        }
+
+        //导入模板
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (this.record == null)
+            {
+                MessageBox.Show("请先选择病人与病历！", "提示信息");
+                return;
+            }
+            TemplateForm tf = new TemplateForm(db);
+            tf.ShowDialog();
+            Template t = tf.selected_template;
+            if (t != null)
+            {
+                foreach (TemplateItem titem in t.items)
+                {
+                    add_item(this.record.cprescription, titem.药品, titem.数量);
+                    //Item item = new Item();
+                    //item.medicine = titem.药品;
+                    //item.名称 = titem.药品.名称;
+                    //item.单价 = titem.药品.价格;
+                    //item.数量 = titem.数量;
+                    //item.小计 = decimal.Round(item.单价 * item.数量 + 0.00M, 2);
+                    //this.record.cprescription.items.Add(item);
+                    //this.record.cprescription.price += item.小计;
+                }
                 db.SaveChanges();
                 set_prescriptions();
             }
@@ -626,31 +670,31 @@ namespace E_Diagnosis
             reportViewer1.RefreshReport();
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        //双击修改已添加的西药中成药
+        private void dataGridView3_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (this.record == null)
-            {
-                MessageBox.Show("请先选择病人与病历！", "提示信息");
+            if (e.RowIndex < 0)
                 return;
-            }
-            TemplateForm tf = new TemplateForm(db);
-            tf.ShowDialog();
-            Template t = tf.selected_template;
-            if (t != null)
-            {
-                foreach (TemplateItem titem in t.items)
-                {
-                    Item item = new Item();
-                    item.名称 = titem.药品.名称;
-                    item.单价 = titem.药品.价格;
-                    item.数量 = titem.数量;
-                    item.小计 = decimal.Round(item.单价 * item.数量 + 0.00M, 2);
-                    this.record.cprescription.items.Add(item);
-                    this.record.cprescription.price += item.小计;
-                }
-                db.SaveChanges();
-                set_prescriptions();
-            }
+            Item item = (Item)dataGridView3.Rows[e.RowIndex].DataBoundItem;
+            new MedicineEditForm(item).ShowDialog();
+            db.SaveChanges();
+            set_prescriptions();
+        }
+
+        private void dataGridView4_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+            Item item = (Item)dataGridView4.Rows[e.RowIndex].DataBoundItem;
+            new MedicineEditForm(item).ShowDialog();
+            db.SaveChanges();
+            set_prescriptions();
+        }
+
+        //导入选中的推荐模板
+        private void button7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

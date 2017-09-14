@@ -211,6 +211,7 @@ namespace E_Diagnosis
     {
         public int id { get; set; }
         public virtual Prescription prescription { get; set; }
+        public Medicine medicine { get; set; }
         public string 名称 { get; set; }
         public decimal 数量 { get; set; }
         public decimal 单价 { get; set; }
@@ -229,6 +230,7 @@ namespace E_Diagnosis
         public string 功用 { get; set; }
         public string 主治 { get; set; }
         public string 备注 { get; set; }
+        public string keywords { get; set; }
     }
 
     public class TemplateItem
