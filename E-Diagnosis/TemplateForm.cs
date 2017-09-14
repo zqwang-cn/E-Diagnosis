@@ -52,6 +52,7 @@ namespace E_Diagnosis
             textBox2.Text = this.template.功用;
             textBox3.Text = this.template.主治;
             textBox4.Text = this.template.备注;
+            textBox6.Text = this.template.keywords;
             set_items();
         }
 

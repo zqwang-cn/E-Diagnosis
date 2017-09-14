@@ -8,10 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace E_Diagnosis
-{
+    {
     public partial class MainForm : Form
     {
+        static char[] separator = { ' ', ',', '.', ';', '，', '。', '；' };
         DiagnosisContext db;
         private List<Patient> l;
         private Record record;
@@ -159,6 +161,27 @@ namespace E_Diagnosis
             }
         }
 
+        private void set_recommendations()
+        {
+            if (this.record == null)
+            {
+                return;
+            }
+            string[] keywords = this.record.主诉.Split(separator);
+            var query = from template in db.template_set
+                        where keywords.Any(keyword => keyword != "" && template.keywords.Contains(keyword))
+                        select template;
+            List<Template> recommendations = query.ToList<Template>();
+            dataGridView5.DataSource = recommendations;
+            dataGridView5.Columns[0].Visible = false;
+            dataGridView5.Columns[1].Visible = false;
+            dataGridView5.Columns[3].Visible = false;
+            dataGridView5.Columns[4].Visible = false;
+            dataGridView5.Columns[5].Visible = false;
+            dataGridView5.Columns[6].Visible = false;
+            dataGridView5.ClearSelection();
+        }
+
         private void set_record(Record r)
         {
             this.record = r;
@@ -206,6 +229,8 @@ namespace E_Diagnosis
                 textBox24.Text = r.审核;
                 textBox25.Text = r.核对;
                 textBox26.Text = r.发药;
+
+                set_recommendations();
             }
             set_prescriptions();
         }
@@ -251,6 +276,7 @@ namespace E_Diagnosis
                         if (this.record == (Record)row.DataBoundItem)
                         {
                             row.Selected = true;
+                            set_record(this.record);
                             break;
                         }
                     }
@@ -325,6 +351,7 @@ namespace E_Diagnosis
         {
             TemplateForm tf = new TemplateForm(db);
             tf.ShowDialog();
+            set_recommendations();
         }
 
         private void add_item(Prescription pre, Medicine medicine, decimal amount)
@@ -352,6 +379,16 @@ namespace E_Diagnosis
                 item.小计 = decimal.Round(item.单价 * item.数量 + 0.00M, 2);
                 pre.items.Add(item);
                 pre.price += item.小计;
+            }
+            db.SaveChanges();
+            set_prescriptions();
+        }
+
+        public void import_template(Template t)
+        {
+            foreach (TemplateItem titem in t.items)
+            {
+                add_item(this.record.cprescription, titem.药品, titem.数量);
             }
             db.SaveChanges();
             set_prescriptions();
@@ -622,23 +659,12 @@ namespace E_Diagnosis
             }
             TemplateForm tf = new TemplateForm(db);
             tf.ShowDialog();
+            set_recommendations();
             Template t = tf.selected_template;
             if (t != null)
             {
-                foreach (TemplateItem titem in t.items)
-                {
-                    add_item(this.record.cprescription, titem.药品, titem.数量);
-                    //Item item = new Item();
-                    //item.medicine = titem.药品;
-                    //item.名称 = titem.药品.名称;
-                    //item.单价 = titem.药品.价格;
-                    //item.数量 = titem.数量;
-                    //item.小计 = decimal.Round(item.单价 * item.数量 + 0.00M, 2);
-                    //this.record.cprescription.items.Add(item);
-                    //this.record.cprescription.price += item.小计;
-                }
-                db.SaveChanges();
-                set_prescriptions();
+                import_template(t);
+                MessageBox.Show("导入成功！", "提示信息");
             }
         }
 
@@ -694,7 +720,16 @@ namespace E_Diagnosis
         //导入选中的推荐模板
         private void button7_Click(object sender, EventArgs e)
         {
-
+            if (dataGridView5.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("请先选择模板", "提示信息");
+            }
+            else
+            {
+                Template t = (Template)dataGridView5.SelectedRows[0].DataBoundItem;
+                import_template(t);
+                MessageBox.Show("导入成功！", "提示信息");
+            }
         }
     }
 }

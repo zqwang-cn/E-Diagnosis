@@ -141,12 +141,12 @@
             this.label49 = new System.Windows.Forms.Label();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.button12 = new System.Windows.Forms.Button();
             this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button7 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -1661,8 +1661,10 @@
             this.tableLayoutPanel3.SetColumnSpan(this.dataGridView5, 2);
             this.dataGridView5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView5.Location = new System.Drawing.Point(795, 58);
+            this.dataGridView5.MultiSelect = false;
             this.dataGridView5.Name = "dataGridView5";
             this.dataGridView5.ReadOnly = true;
+            this.dataGridView5.RowHeadersVisible = false;
             this.tableLayoutPanel3.SetRowSpan(this.dataGridView5, 7);
             this.dataGridView5.RowTemplate.Height = 23;
             this.dataGridView5.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -1679,6 +1681,17 @@
             this.button8.Text = "其它模板";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button7
+            // 
+            this.button7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button7.Location = new System.Drawing.Point(795, 511);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(72, 23);
+            this.button7.TabIndex = 33;
+            this.button7.Text = "导入";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // tabPage4
             // 
@@ -1730,17 +1743,6 @@
             // patientBindingSource
             // 
             this.patientBindingSource.DataSource = typeof(E_Diagnosis.Patient);
-            // 
-            // button7
-            // 
-            this.button7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button7.Location = new System.Drawing.Point(795, 511);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(72, 23);
-            this.button7.TabIndex = 33;
-            this.button7.Text = "导入";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // MainForm
             // 
