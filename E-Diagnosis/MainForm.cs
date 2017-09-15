@@ -605,6 +605,33 @@ namespace E_Diagnosis
                 r.发药 = textBox26.Text;
                 r.wprescription = new Prescription();
                 r.cprescription = new Prescription();
+                if (this.patient.records.Count != 0)
+                {
+                    Record pr = this.patient.records.Last();
+                    foreach(Item pi in pr.wprescription.items)
+                    {
+                        Item i = new Item();
+                        i.名称 = pi.名称;
+                        i.单价 = pi.单价;
+                        i.数量 = pi.数量;
+                        i.小计 = pi.小计;
+                        i.medicine = pi.medicine;
+                        r.wprescription.items.Add(i);
+                    }
+                    r.wprescription.price = pr.wprescription.price;
+                    foreach (Item pi in pr.cprescription.items)
+                    {
+                        Item i = new Item();
+                        i.名称 = pi.名称;
+                        i.单价 = pi.单价;
+                        i.数量 = pi.数量;
+                        i.小计 = pi.小计;
+                        i.medicine = pi.medicine;
+                        r.cprescription.items.Add(i);
+                    }
+                    r.cprescription.amount = pr.cprescription.amount;
+                    r.cprescription.price = pr.cprescription.price;
+                }
                 this.patient.records.Add(r);
             }
             else
