@@ -25,8 +25,8 @@ namespace E_Diagnosis
         private void refresh()
         {
             IEnumerable<Template> query = from template in db.template_set
-                        where template.名称.Contains(textBox5.Text)
-                        select template;
+                                          where template.名称.Contains(textBox5.Text) && template.主治.Contains(textBox7.Text) && template.备注.Contains(textBox8.Text)
+                                          select template;
             dataGridView1.DataSource = query.ToList();
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].Visible = false;
@@ -62,6 +62,16 @@ namespace E_Diagnosis
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            refresh();
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+            refresh();
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
         {
             refresh();
         }
