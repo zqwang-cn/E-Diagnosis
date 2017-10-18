@@ -9,21 +9,23 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>门诊综合病历</Value>
+                <Value>=First(Fields!title.Value, "settings")</Value>
                 <Style>
                   <FontFamily>宋体</FontFamily>
                   <FontSize>20pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.07592cm</Top>
-        <Left>5.81653cm</Left>
+        <Left>0.61716cm</Left>
         <Height>0.94396cm</Height>
-        <Width>4.59021cm</Width>
+        <Width>14.59429cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2078,6 +2080,13 @@
       </ConnectionProperties>
       <rd:DataSourceID>9592a46e-3eb1-4d3c-9b11-14012fdd6fd8</rd:DataSourceID>
     </DataSource>
+    <DataSource Name="E_DiagnosisProperties">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>11554697-82d3-4db7-afdf-36483c655737</rd:DataSourceID>
+    </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="patient">
@@ -2410,6 +2419,23 @@
         <rd:TableName>Prescription</rd:TableName>
         <rd:ObjectDataSourceSelectMethod>items</rd:ObjectDataSourceSelectMethod>
         <rd:ObjectDataSourceType>E_Diagnosis.Prescription, E-Diagnosis, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="settings">
+      <Query>
+        <DataSourceName>E_DiagnosisProperties</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="title">
+          <DataField>title</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>E_Diagnosis.Properties</rd:DataSetName>
+        <rd:TableName>Settings</rd:TableName>
+        <rd:ObjectDataSourceType>E_Diagnosis.Properties.Settings, E-Diagnosis, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

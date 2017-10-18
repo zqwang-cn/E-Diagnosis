@@ -25,7 +25,7 @@ namespace E_Diagnosis
         private void refresh()
         {
             IEnumerable<Template> query = from template in db.template_set
-                                          where template.名称.Contains(textBox5.Text) && template.主治.Contains(textBox7.Text) && template.备注.Contains(textBox8.Text)
+                                          where (textBox5.Text=="" || template.名称.Contains(textBox5.Text)) && (textBox7.Text=="" || template.主治.Contains(textBox7.Text)) && (textBox8.Text=="" || template.备注.Contains(textBox8.Text))
                                           select template;
             dataGridView1.DataSource = query.ToList();
             dataGridView1.Columns[0].Visible = false;

@@ -33,66 +33,11 @@ namespace E_Diagnosis
             reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
         }
 
-        //private void set_patient_editable(bool editable)
-        //{
-        //    comboBox3.Enabled = editable;
-        //    textBox5.Enabled = editable;
-        //    textBox3.Enabled = editable;
-        //    comboBox1.Enabled = editable;
-        //    numericUpDown1.Enabled = editable;
-        //    numericUpDown2.Enabled = editable;
-        //    comboBox4.Enabled = editable;
-        //    comboBox5.Enabled = editable;
-        //    textBox11.Enabled = editable;
-        //    textBox12.Enabled = editable;
-        //    comboBox6.Enabled = editable;
-        //    textBox13.Enabled = editable;
-        //    textBox14.Enabled = editable;
-        //    textBox4.Enabled = editable;
-        //    textBox15.Enabled = editable;
-        //}
-
-        //private void set_record_editable(bool editable)
-        //{
-        //    comboBox2.Enabled = editable;
-        //    comboBox7.Enabled = editable;
-        //    dateTimePicker1.Enabled = editable;
-        //    textBox6.Enabled = editable;
-        //    textBox7.Enabled = editable;
-        //    textBox8.Enabled = editable;
-        //    textBox21.Enabled = editable;
-        //    textBox9.Enabled = editable;
-        //    textBox10.Enabled = editable;
-        //    textBox16.Enabled = editable;
-        //    textBox17.Enabled = editable;
-        //    textBox18.Enabled = editable;
-        //    textBox19.Enabled = editable;
-        //    textBox20.Enabled = editable;
-        //}
-
-        //private void set_prescription_editable(bool editable)
-        //{
-        //    button3.Enabled = editable;
-        //    button4.Enabled = editable;
-        //    button5.Enabled = editable;
-        //    button6.Enabled = editable;
-        //    numericUpDown3.Enabled = editable;
-        //    textBox22.Enabled = editable;
-        //    textBox23.Enabled = editable;
-        //    textBox24.Enabled = editable;
-        //    textBox25.Enabled = editable;
-        //    textBox26.Enabled = editable;
-        //    button7.Enabled = editable;
-        //    button8.Enabled = editable;
-        //    button14.Enabled = !editable;
-        //    button12.Enabled = !editable;
-        //}
-
         //刷新用户列表
         private void refresh()
         {
             IEnumerable<Patient> query = from patient in db.patient_set
-                                         where patient.编号.Contains(textBox1.Text) && patient.姓名.Contains(textBox2.Text)
+                                         where (textBox1.Text=="" || patient.编号.Contains(textBox1.Text)) && (textBox2.Text=="" || patient.姓名.Contains(textBox2.Text))
                                          select patient;
             l = query.ToList();
             dataGridView1.DataSource = l;
@@ -242,8 +187,8 @@ namespace E_Diagnosis
                 dataGridView2.DataSource = new List<Record>();
                 dataGridView2.Columns[0].Visible = false;
                 dataGridView2.Columns[1].Visible = false;
-                dataGridView2.Columns[2].Visible = false;
-                dataGridView2.Columns[5].DefaultCellStyle.Format = "yyyy/MM/dd";
+                dataGridView2.Columns[4].DefaultCellStyle.Format = "yyyy/MM/dd";
+                dataGridView2.Columns[15].Visible = false;
                 dataGridView2.Columns[16].Visible = false;
                 dataGridView2.Columns[17].Visible = false;
                 dataGridView2.Columns[18].Visible = false;
@@ -251,7 +196,6 @@ namespace E_Diagnosis
                 dataGridView2.Columns[20].Visible = false;
                 dataGridView2.Columns[21].Visible = false;
                 dataGridView2.Columns[22].Visible = false;
-                dataGridView2.Columns[23].Visible = false;
                 set_record(null);
             }
             else
@@ -259,8 +203,8 @@ namespace E_Diagnosis
                 dataGridView2.DataSource = this.patient.records.ToList();
                 dataGridView2.Columns[0].Visible = false;
                 dataGridView2.Columns[1].Visible = false;
-                dataGridView2.Columns[2].Visible = false;
-                dataGridView2.Columns[5].DefaultCellStyle.Format = "yyyy/MM/dd";
+                dataGridView2.Columns[4].DefaultCellStyle.Format = "yyyy/MM/dd";
+                dataGridView2.Columns[15].Visible = false;
                 dataGridView2.Columns[16].Visible = false;
                 dataGridView2.Columns[17].Visible = false;
                 dataGridView2.Columns[18].Visible = false;
@@ -268,7 +212,6 @@ namespace E_Diagnosis
                 dataGridView2.Columns[20].Visible = false;
                 dataGridView2.Columns[21].Visible = false;
                 dataGridView2.Columns[22].Visible = false;
-                dataGridView2.Columns[23].Visible = false;
                 if (this.record != null && this.record.patient == this.patient)
                 {
                     foreach (DataGridViewRow row in dataGridView2.Rows)
@@ -352,6 +295,12 @@ namespace E_Diagnosis
             TemplateForm tf = new TemplateForm(db);
             tf.ShowDialog();
             set_recommendations();
+        }
+
+        private void settingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SettingForm sf = new SettingForm();
+            sf.ShowDialog();
         }
 
         private void add_item(Prescription pre, Medicine medicine, decimal amount)
@@ -572,6 +521,76 @@ namespace E_Diagnosis
             set_record(null);
         }
 
+        private void button10_Click(object sender, EventArgs e)
+        {
+            if (this.patient == null)
+            {
+                MessageBox.Show("请先选择病人！", "提示信息");
+                return;
+            }
+            if (this.patient.records.Count == 0)
+            {
+                button11_Click(sender, e);
+                return;
+            }
+            Record lr = ((List<Record>)this.patient.records)[this.patient.records.Count - 1];
+            Record r = new Record();
+            this.patient.records.Add(r);
+            r.patient = lr.patient;
+            r.类型 = "复诊";
+            r.科别 = lr.科别;
+            r.就诊日期 = DateTime.Now;
+            r.主诉 = lr.主诉;
+            r.现病史 = lr.现病史;
+            r.既往史 = lr.既往史;
+            r.个人史 = lr.个人史;
+            r.家族史 = lr.家族史;
+            r.月经及婚育史 = lr.月经及婚育史;
+            r.体格检查 = lr.体格检查;
+            r.辅助检查 = lr.辅助检查;
+            r.临床诊断 = lr.临床诊断;
+            r.治疗意见 = lr.治疗意见;
+            r.说明 = lr.说明;
+            r.医师 = lr.医师;
+            r.调配 = lr.调配;
+            r.审核 = lr.审核;
+            r.核对 = lr.核对;
+            r.发药 = lr.发药;
+            r.wprescription = new Prescription();
+            r.wprescription.record = lr.wprescription.record;
+            r.wprescription.amount = lr.wprescription.amount;
+            r.wprescription.price = lr.wprescription.price;
+            foreach(Item litem in lr.wprescription.items)
+            {
+                Item item = new Item();
+                item.prescription = r.wprescription;
+                item.medicine = litem.medicine;
+                item.名称 = litem.名称;
+                item.数量 = litem.数量;
+                item.单价 = litem.单价;
+                item.小计 = litem.小计;
+                r.wprescription.items.Add(item);
+            }
+            r.cprescription = new Prescription();
+            r.cprescription.record = lr.cprescription.record;
+            r.cprescription.amount = lr.cprescription.amount;
+            r.cprescription.price = lr.cprescription.price;
+            foreach (Item litem in lr.cprescription.items)
+            {
+                Item item = new Item();
+                item.prescription = r.cprescription;
+                item.medicine = litem.medicine;
+                item.名称 = litem.名称;
+                item.数量 = litem.数量;
+                item.单价 = litem.单价;
+                item.小计 = litem.小计;
+                r.cprescription.items.Add(item);
+            }
+            db.SaveChanges();
+            this.record= ((List<Record>)this.patient.records)[this.patient.records.Count - 1];
+            set_records();
+        }
+
         //保存病历
         private void button2_Click(object sender, EventArgs e)
         {
@@ -720,6 +739,9 @@ namespace E_Diagnosis
             reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("cp", cp));
             reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("witems", this.record.wprescription.items.ToList()));
             reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("citems", this.record.cprescription.items.ToList()));
+            List<Properties.Settings> settings = new List<Properties.Settings>();
+            settings.Add(Properties.Settings.Default);
+            reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("settings", settings));
             reportViewer1.RefreshReport();
         }
 

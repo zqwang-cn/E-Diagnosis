@@ -15,118 +15,6 @@ namespace E_Diagnosis
         中药,
     }
 
-    //public enum FeeType
-    //{
-    //    自费,
-    //    公费,
-    //    医保,
-    //    其他,
-    //    合医,
-    //    生育保险,
-    //    商业保险,
-    //}
-
-    //public enum Gender
-    //{
-    //    男,
-    //    女,
-    //}
-
-    //public enum Marriage
-    //{
-    //    已婚,
-    //    未婚,
-    //    离婚,
-    //    丧偶,
-    //}
-
-    //public enum Type
-    //{
-    //    初诊,
-    //    复诊,
-    //}
-
-    //public enum Department
-    //{
-    //    儿科,
-    //    内科,
-    //    口腔科,
-    //    外科,
-    //    妇科,
-    //    骨科,
-    //}
-
-    //public enum BloodType
-    //{
-    //    A型,
-    //    B型,
-    //    O型,
-    //    AB型,
-    //    Rh阴性型,
-    //    MNSSU型,
-    //    P型,
-    //}
-
-    //public enum Nation
-    //{
-    //    汉族,
-    //    壮族,
-    //    满族,
-    //    回族,
-    //    苗族,
-    //    维吾尔族,
-    //    土家族,
-    //    彝族,
-    //    蒙古族,
-    //    藏族,
-    //    布依族,
-    //    侗族,
-    //    瑶族,
-    //    朝鲜族,
-    //    白族,
-    //    哈尼族,
-    //    哈萨克族,
-    //    黎族,
-    //    傣族,
-    //    畲族,
-    //    傈僳族,
-    //    仡佬族,
-    //    东乡族,
-    //    高山族,
-    //    拉祜族,
-    //    水族,
-    //    佤族,
-    //    纳西族,
-    //    羌族,
-    //    土族,
-    //    仫佬族,
-    //    锡伯族,
-    //    柯尔克孜族,
-    //    达斡尔族,
-    //    景颇族,
-    //    毛南族,
-    //    撒拉族,
-    //    布朗族,
-    //    塔吉克族,
-    //    阿昌族,
-    //    普米族,
-    //    鄂温克族,
-    //    怒族,
-    //    京族,
-    //    基诺族,
-    //    德昂族,
-    //    保安族,
-    //    俄罗斯族,
-    //    裕固族,
-    //    乌孜别克族,
-    //    门巴族,
-    //    鄂伦春族,
-    //    独龙族,
-    //    塔塔尔族,
-    //    赫哲族,
-    //    珞巴族,
-    //}
-
     public class Medicine
     {
         public int id { get; set; }
@@ -170,7 +58,6 @@ namespace E_Diagnosis
     {
         public int id { get; set; }
         public virtual Patient patient { get; set; }
-        public bool finished { get; set; } = false;
         public string 类型 { get; set; }
         public string 科别 { get; set; }
         public DateTime 就诊日期 { get; set; }

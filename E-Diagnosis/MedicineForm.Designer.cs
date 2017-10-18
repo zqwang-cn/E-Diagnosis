@@ -137,7 +137,7 @@
             0,
             131072});
             this.numericUpDown1.Minimum = new decimal(new int[] {
-            10,
+            1,
             0,
             0,
             131072});
@@ -287,7 +287,7 @@
             1,
             0,
             0,
-            0});
+            65536});
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(81, 21);
             this.numericUpDown2.TabIndex = 15;

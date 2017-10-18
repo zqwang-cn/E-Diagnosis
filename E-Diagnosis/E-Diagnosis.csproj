@@ -109,6 +109,12 @@
     <Compile Include="MedicineForm.Designer.cs">
       <DependentUpon>MedicineForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingForm.Designer.cs">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="TemplateForm.cs">
       <SubType>Form</SubType>
@@ -134,11 +140,15 @@
     <EmbeddedResource Include="MedicineForm.resx">
       <DependentUpon>MedicineForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SettingForm.resx">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TemplateForm.resx">
       <DependentUpon>TemplateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="whole.rdlc" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\E_Diagnosis.Properties.Settings.datasource" />
     <None Include="Properties\DataSources\Patient.datasource" />
     <None Include="Properties\DataSources\Prescription.datasource" />
     <None Include="Properties\DataSources\Record.datasource" />

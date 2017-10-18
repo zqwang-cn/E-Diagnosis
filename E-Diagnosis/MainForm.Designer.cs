@@ -33,6 +33,8 @@
             this.dataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.medicineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prescriptionTemplateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -120,6 +122,7 @@
             this.label41 = new System.Windows.Forms.Label();
             this.textBox26 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
@@ -172,7 +175,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dataToolStripMenuItem});
+            this.dataToolStripMenuItem,
+            this.设置ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(984, 25);
@@ -201,6 +205,21 @@
             this.prescriptionTemplateToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.prescriptionTemplateToolStripMenuItem.Text = "处方模板";
             this.prescriptionTemplateToolStripMenuItem.Click += new System.EventHandler(this.prescriptionTemplateToolStripMenuItem_Click);
+            // 
+            // 设置ToolStripMenuItem
+            // 
+            this.设置ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingToolStripMenuItem});
+            this.设置ToolStripMenuItem.Name = "设置ToolStripMenuItem";
+            this.设置ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.设置ToolStripMenuItem.Text = "设置";
+            // 
+            // settingToolStripMenuItem
+            // 
+            this.settingToolStripMenuItem.Name = "settingToolStripMenuItem";
+            this.settingToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.settingToolStripMenuItem.Text = "设置";
+            this.settingToolStripMenuItem.Click += new System.EventHandler(this.settingToolStripMenuItem_Click);
             // 
             // label2
             // 
@@ -855,6 +874,7 @@
             this.tableLayoutPanel2.Controls.Add(this.label41, 10, 11);
             this.tableLayoutPanel2.Controls.Add(this.textBox26, 11, 11);
             this.tableLayoutPanel2.Controls.Add(this.button2, 8, 13);
+            this.tableLayoutPanel2.Controls.Add(this.button10, 10, 13);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -1369,6 +1389,17 @@
             this.button2.Text = "保存";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button10
+            // 
+            this.button10.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button10.Location = new System.Drawing.Point(803, 501);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(74, 23);
+            this.button10.TabIndex = 40;
+            this.button10.Text = "复制新建";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // tabPage3
             // 
@@ -1905,6 +1936,9 @@
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.DataGridView dataGridView5;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.ToolStripMenuItem 设置ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem settingToolStripMenuItem;
+        private System.Windows.Forms.Button button10;
     }
 }
 

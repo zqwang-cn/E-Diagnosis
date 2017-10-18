@@ -29,7 +29,7 @@ namespace E_Diagnosis
         private void refresh()
         {
             IEnumerable<Medicine> query = from medicine in db.medicine_set
-                                          where medicine.名称.Contains(textBox1.Text) && medicine.category == (Category)comboBox1.SelectedItem
+                                          where (textBox1.Text=="" || medicine.名称.Contains(textBox1.Text)) && medicine.category == (Category)comboBox1.SelectedItem
                                           select medicine;
             l = query.ToList();
             dataGridView1.DataSource = l;
