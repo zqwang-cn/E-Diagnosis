@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Common;
 
 namespace E_Diagnosis
 {
@@ -130,6 +131,10 @@ namespace E_Diagnosis
 
     public class DiagnosisContext:DbContext
     {
+        public DiagnosisContext(DbConnection connection) : base(connection, true)
+        {
+
+        }
         public DbSet<Medicine> medicine_set { get; set; }
         public DbSet<Patient> patient_set { get; set; }
         public DbSet<Template> template_set { get; set; }

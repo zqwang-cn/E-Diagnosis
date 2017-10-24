@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
+using System.Data.SQLite;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
 namespace E_Diagnosis
-    {
+{
     public partial class MainForm : Form
     {
         static char[] separator = { ' ', ',', '.', ';', '，', '。', '；' };
@@ -59,14 +56,38 @@ namespace E_Diagnosis
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MainForm_Load(object sender, EventArgs e)
         {
             tabControl1.SelectTab(1);
             tabControl1.SelectTab(2);
             tabControl1.SelectTab(3);
             tabControl1.SelectTab(0);
-            db = new DiagnosisContext();
-            refresh();
+
+            this.Show();
+            PasswordForm pf = new PasswordForm();
+            pf.ShowDialog();
+            if (pf.password == null)
+            {
+                Application.Exit();
+            }
+            string cstring = String.Format("Data Source=E-Diagnosis.db;Password={0};", pf.password);
+            SQLiteConnection connection= new SQLiteConnection(cstring);
+            connection.Open();
+            db = new DiagnosisContext(connection);
+            try
+            {
+                refresh();
+            }
+            catch
+            {
+                MessageBox.Show("密码错误，程序即将退出！", "提示信息");
+                Application.Exit();
+            }
             this.reportViewer1.RefreshReport();
         }
 
@@ -778,6 +799,17 @@ namespace E_Diagnosis
                 Template t = (Template)dataGridView5.SelectedRows[0].DataBoundItem;
                 import_template(t);
                 MessageBox.Show("导入成功！", "提示信息");
+            }
+        }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewPasswordForm npf = new NewPasswordForm();
+            npf.ShowDialog();
+            if (npf.newpassword != null)
+            {
+                ((SQLiteConnection)db.Database.Connection).ChangePassword(npf.newpassword);
+                MessageBox.Show("修改密码成功！", "提示信息");
             }
         }
     }

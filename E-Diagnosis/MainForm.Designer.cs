@@ -150,6 +150,7 @@
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.button12 = new System.Windows.Forms.Button();
             this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -209,7 +210,8 @@
             // 设置ToolStripMenuItem
             // 
             this.设置ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.settingToolStripMenuItem});
+            this.settingToolStripMenuItem,
+            this.changePasswordToolStripMenuItem});
             this.设置ToolStripMenuItem.Name = "设置ToolStripMenuItem";
             this.设置ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.设置ToolStripMenuItem.Text = "设置";
@@ -217,7 +219,7 @@
             // settingToolStripMenuItem
             // 
             this.settingToolStripMenuItem.Name = "settingToolStripMenuItem";
-            this.settingToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.settingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.settingToolStripMenuItem.Text = "设置";
             this.settingToolStripMenuItem.Click += new System.EventHandler(this.settingToolStripMenuItem_Click);
             // 
@@ -1775,6 +1777,13 @@
             // 
             this.patientBindingSource.DataSource = typeof(E_Diagnosis.Patient);
             // 
+            // changePasswordToolStripMenuItem
+            // 
+            this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.changePasswordToolStripMenuItem.Text = "修改密码";
+            this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1939,6 +1948,7 @@
         private System.Windows.Forms.ToolStripMenuItem 设置ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingToolStripMenuItem;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
     }
 }
 
