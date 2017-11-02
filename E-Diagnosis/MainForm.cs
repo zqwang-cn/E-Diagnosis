@@ -4,18 +4,24 @@ using System.Data;
 using System.Data.SQLite;
 using System.Linq;
 using System.Windows.Forms;
-
+using System.Data.Linq.SqlClient;
 
 namespace E_Diagnosis
 {
     public partial class MainForm : Form
     {
+        //分隔符，用于分隔主诉中的关键字
         static char[] separator = { ' ', ',', '.', ';', '，', '。', '；' };
+        //数据库
         DiagnosisContext db;
+        //当前病人列表
         private List<Patient> l;
+        //当前病历
         private Record record;
+        //当前病人
         private Patient patient;
 
+        //初始化
         public MainForm()
         {
             InitializeComponent();
@@ -34,11 +40,23 @@ namespace E_Diagnosis
         private void refresh()
         {
             IEnumerable<Patient> query = from patient in db.patient_set
-                                         where (textBox1.Text=="" || patient.编号.Contains(textBox1.Text)) && (textBox2.Text=="" || patient.姓名.Contains(textBox2.Text))
+                                         where patient.编号.Contains(textBox1.Text) && patient.姓名.Contains(textBox2.Text)
                                          select patient;
             l = query.ToList();
             dataGridView1.DataSource = l;
             dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[5].Visible = false;
+            dataGridView1.Columns[6].Visible = false;
+            dataGridView1.Columns[7].Visible = false;
+            dataGridView1.Columns[8].Visible = false;
+            dataGridView1.Columns[9].Visible = false;
+            dataGridView1.Columns[10].Visible = false;
+            dataGridView1.Columns[11].Visible = false;
+            dataGridView1.Columns[12].Visible = false;
+            dataGridView1.Columns[13].Visible = false;
+            dataGridView1.Columns[14].Visible = false;
+            dataGridView1.Columns[15].Visible = false;
+            dataGridView1.Columns[16].Visible = false;
             dataGridView1.Columns[17].Visible = false;
             dataGridView1.ClearSelection();
             if (this.patient != null)
@@ -56,33 +74,34 @@ namespace E_Diagnosis
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        //进入主窗口
         private void MainForm_Load(object sender, EventArgs e)
         {
+            //不加这几行显示上会有个小bug，不影响功能正常使用
             tabControl1.SelectTab(1);
             tabControl1.SelectTab(2);
             tabControl1.SelectTab(3);
             tabControl1.SelectTab(0);
 
             this.Show();
+            //打开密码输入窗口获取密码
             PasswordForm pf = new PasswordForm();
             pf.ShowDialog();
             if (pf.password == null)
             {
                 Application.Exit();
             }
+            //使用密码打开数据库
             string cstring = String.Format("Data Source=E-Diagnosis.db;Password={0};", pf.password);
             SQLiteConnection connection= new SQLiteConnection(cstring);
             connection.Open();
             db = new DiagnosisContext(connection);
+            //刷新所有病人
             try
             {
                 refresh();
             }
+            //如果密码出错，则提示并退出
             catch
             {
                 MessageBox.Show("密码错误，程序即将退出！", "提示信息");
@@ -91,13 +110,15 @@ namespace E_Diagnosis
             this.reportViewer1.RefreshReport();
         }
 
+        //显示当前选中病历的处方
         private void set_prescriptions()
         {
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.RefreshReport();
+            //如果已经选中一条病历，则显示该病历的处方
             if (this.record != null)
             {
-                //wprescription
+                //西药处方
                 label46.Text = this.record.wprescription.price.ToString() + "元";
                 dataGridView3.DataSource = this.record.wprescription.items.ToList();
                 dataGridView3.ClearSelection();
@@ -105,9 +126,9 @@ namespace E_Diagnosis
                 dataGridView3.Columns[1].Visible = false;
                 dataGridView3.Columns[2].Visible = false;
 
-                //cprescription
+                //中药处方
                 numericUpDown3.Value = this.record.cprescription.amount;
-                label47.Text = (this.record.cprescription.price * this.record.cprescription.amount).ToString() + "元";
+                label47.Text = String.Format("每剂{0}元\n共{1}元", this.record.cprescription.price, this.record.cprescription.price * this.record.cprescription.amount);
                 dataGridView4.DataSource = this.record.cprescription.items.ToList();
                 dataGridView4.ClearSelection();
                 dataGridView4.Columns[0].Visible = false;
@@ -116,6 +137,7 @@ namespace E_Diagnosis
 
                 label48.Text = (this.record.wprescription.price + this.record.cprescription.price * this.record.cprescription.amount).ToString() + "元";
             }
+            //否则清空处方
             else
             {
                 dataGridView3.DataSource = null;
@@ -127,17 +149,20 @@ namespace E_Diagnosis
             }
         }
 
+        //显示推荐药方
         private void set_recommendations()
         {
             if (this.record == null)
             {
                 return;
             }
+            //将主诉拆分为关键词搜索模板
             string[] keywords = this.record.主诉.Split(separator);
             var query = from template in db.template_set
                         where keywords.Any(keyword => keyword != "" && template.keywords.Contains(keyword))
                         select template;
             List<Template> recommendations = query.ToList<Template>();
+            //显示所有搜索到的模板
             dataGridView5.DataSource = recommendations;
             dataGridView5.Columns[0].Visible = false;
             dataGridView5.Columns[1].Visible = false;
@@ -148,6 +173,7 @@ namespace E_Diagnosis
             dataGridView5.ClearSelection();
         }
 
+        //显示一条病历内容
         private void set_record(Record r)
         {
             this.record = r;
@@ -201,6 +227,7 @@ namespace E_Diagnosis
             set_prescriptions();
         }
 
+        //显示当前选中病人的所有病历
         private void set_records()
         {
             if (this.patient == null)
@@ -233,6 +260,7 @@ namespace E_Diagnosis
                 dataGridView2.Columns[20].Visible = false;
                 dataGridView2.Columns[21].Visible = false;
                 dataGridView2.Columns[22].Visible = false;
+                //如果在修改一条病历后进入此函数，则仍然显示此条病历
                 if (this.record != null && this.record.patient == this.patient)
                 {
                     foreach (DataGridViewRow row in dataGridView2.Rows)
@@ -245,6 +273,7 @@ namespace E_Diagnosis
                         }
                     }
                 }
+                //如果在其它情况下进入，则显示最后一条记录
                 else
                 {
                     if (dataGridView2.Rows.Count > 0)
@@ -305,12 +334,14 @@ namespace E_Diagnosis
             set_records();
         }
 
+        //打开药品编辑窗口
         private void medicineToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MedicineForm mf = new MedicineForm(db, Category.中药);
             mf.ShowDialog();
         }
 
+        //打开模板编辑窗口
         private void prescriptionTemplateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TemplateForm tf = new TemplateForm(db);
@@ -318,143 +349,34 @@ namespace E_Diagnosis
             set_recommendations();
         }
 
+        //打开设置窗口
         private void settingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SettingForm sf = new SettingForm();
             sf.ShowDialog();
         }
 
-        private void add_item(Prescription pre, Medicine medicine, decimal amount)
+        //打开修改密码窗口
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            bool found = false;
-            foreach(Item item in pre.items)
+            NewPasswordForm npf = new NewPasswordForm();
+            npf.ShowDialog();
+            if (npf.newpassword != null)
             {
-                if (item.medicine == medicine && item.名称==medicine.名称 && item.单价 == medicine.价格)
-                {
-                    item.数量 += amount;
-                    decimal extra= decimal.Round(medicine.价格 * amount + 0.00M, 2);
-                    item.小计 += extra;
-                    pre.price += extra;
-                    found = true;
-                    break;
-                }
+                ((SQLiteConnection)db.Database.Connection).ChangePassword(npf.newpassword);
+                MessageBox.Show("修改密码成功！", "提示信息");
             }
-            if (!found)
-            {
-                Item item = new Item();
-                item.medicine = medicine;
-                item.名称 = medicine.名称;
-                item.单价 = medicine.价格;
-                item.数量 = amount;
-                item.小计 = decimal.Round(item.单价 * item.数量 + 0.00M, 2);
-                pre.items.Add(item);
-                pre.price += item.小计;
-            }
-            db.SaveChanges();
-            set_prescriptions();
-        }
-
-        public void import_template(Template t)
-        {
-            foreach (TemplateItem titem in t.items)
-            {
-                add_item(this.record.cprescription, titem.药品, titem.数量);
-            }
-            db.SaveChanges();
-            set_prescriptions();
-        }
-
-        private void start_add_item(Category c)
-        {
-            if (this.record == null)
-            {
-                MessageBox.Show("请先选择病人与病历！", "提示信息");
-            }
-            else
-            {
-                MedicineForm mf = new MedicineForm(this.db, c);
-                mf.ShowDialog();
-                if (mf.result_medicine != null)
-                {
-                    Prescription p;
-                    if (mf.result_medicine.category == Category.中成药与西药)
-                    {
-                        p = this.record.wprescription;
-                    }
-                    else
-                    {
-                        p = this.record.cprescription;
-                    }
-                    add_item(p, mf.result_medicine, mf.result_amount);
-
-                    //Item item = new Item();
-                    //item.medicine = mf.result_medicine;
-                    //item.名称 = mf.result_medicine.名称;
-                    //item.单价 = mf.result_medicine.价格;
-                    //item.数量 = mf.result_amount;
-                    //item.小计 = decimal.Round(item.单价 * item.数量 + 0.00M, 2);
-                    //p.items.Add(item);
-                    //p.price += item.小计;
-                    //db.SaveChanges();
-                    //set_prescriptions();
-                }
-            }
-        }
-
-        private void del_item(DataGridView dgv, Category c)
-        {
-            if (dgv.CurrentRow == null)
-            {
-                MessageBox.Show("请先选择一项！", "提示信息");
-            }
-            else if (MessageBox.Show("是否确认删除？", "确认信息", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                int index = dgv.CurrentRow.Index;
-                Item i = ((List<Item>)dgv.DataSource)[index];
-                Prescription p;
-                if (c == Category.中成药与西药)
-                {
-                    p = this.record.wprescription;
-                }
-                else
-                {
-                    p = this.record.cprescription;
-                }
-                p.items.Remove(i);
-                p.price -= i.小计;
-                db.SaveChanges();
-                set_prescriptions();
-            }
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            start_add_item(Category.中成药与西药);
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            del_item(dataGridView3, Category.中成药与西药);
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            start_add_item(Category.中药);
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            del_item(dataGridView4, Category.中药);
         }
 
         /*-----------病人页面的操作-------------*/
-        //搜索条件改变
+
+        //搜索条件改变时刷新
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             refresh();
         }
 
+        //搜索条件改变时刷新
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             refresh();
@@ -474,11 +396,11 @@ namespace E_Diagnosis
             dataGridView1.ClearSelection();
             set_patient(null);
         }
-
-
-        //保存当前病人（新建的或选中的）
+        
+        //保存当前病人
         private void button1_Click(object sender, EventArgs e)
         {
+            //当前病人为空时新建并保存
             if (this.patient == null)
             {
                 Patient patient = new Patient();
@@ -503,6 +425,7 @@ namespace E_Diagnosis
                 db.SaveChanges();
                 set_patient(patient);
             }
+            //否则修改并保存
             else
             {
                 this.patient.费别 = (string)comboBox3.SelectedItem;
@@ -527,6 +450,7 @@ namespace E_Diagnosis
         }
 
         /*-----------病历页面的操作-------------*/
+
         //双击选中一个病历
         private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -535,13 +459,14 @@ namespace E_Diagnosis
             set_record(((List<Record>)this.patient.records)[e.RowIndex]);
         }
 
-        //新建空病历
+        //新建病历
         private void button11_Click(object sender, EventArgs e)
         {
             dataGridView2.ClearSelection();
             set_record(null);
         }
 
+        //点击复制新建按钮
         private void button10_Click(object sender, EventArgs e)
         {
             if (this.patient == null)
@@ -554,6 +479,7 @@ namespace E_Diagnosis
                 button11_Click(sender, e);
                 return;
             }
+            //复制当前病历
             Record lr = ((List<Record>)this.patient.records)[this.patient.records.Count - 1];
             Record r = new Record();
             this.patient.records.Add(r);
@@ -705,6 +631,7 @@ namespace E_Diagnosis
         }
 
         /*-----------处方页面的操作-------------*/
+
         //修改剂数
         private void numericUpDown3_ValueChanged(object sender, EventArgs e)
         {
@@ -716,7 +643,168 @@ namespace E_Diagnosis
             }
         }
 
+        //双击修改已添加的西药
+        private void dataGridView3_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+            Item item = (Item)dataGridView3.Rows[e.RowIndex].DataBoundItem;
+            new MedicineEditForm(item).ShowDialog();
+            db.SaveChanges();
+            set_prescriptions();
+        }
+
+        //双击修改已添加的中药
+        private void dataGridView4_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+            Item item = (Item)dataGridView4.Rows[e.RowIndex].DataBoundItem;
+            new MedicineEditForm(item).ShowDialog();
+            db.SaveChanges();
+            set_prescriptions();
+        }
+
+        //向处方中添加一味药品
+        private void add_item(Prescription pre, Medicine medicine, decimal amount)
+        {
+            bool found = false;
+            foreach (Item item in pre.items)
+            {
+                //如果该药品已经存在于处方中，则把数量添加到其中
+                if (item.medicine == medicine && item.名称 == medicine.名称 && item.单价 == medicine.价格)
+                {
+                    item.数量 += amount;
+                    decimal extra = decimal.Round(medicine.价格 * amount + 0.00M, 2);
+                    item.小计 += extra;
+                    pre.price += extra;
+                    found = true;
+                    break;
+                }
+            }
+            //如果不存在，则新建并添加
+            if (!found)
+            {
+                Item item = new Item();
+                item.medicine = medicine;
+                item.名称 = medicine.名称;
+                item.单价 = medicine.价格;
+                item.数量 = amount;
+                item.小计 = decimal.Round(item.单价 * item.数量 + 0.00M, 2);
+                pre.items.Add(item);
+                pre.price += item.小计;
+            }
+            db.SaveChanges();
+            set_prescriptions();
+        }
+
+        //点击按钮，打开药品窗口，让用户选择一味药品进行添加
+        private void start_add_item(Category c)
+        {
+            if (this.record == null)
+            {
+                MessageBox.Show("请先选择病人与病历！", "提示信息");
+            }
+            else
+            {
+                MedicineForm mf = new MedicineForm(this.db, c);
+                mf.ShowDialog();
+                if (mf.result_medicine != null)
+                {
+                    Prescription p;
+                    if (mf.result_medicine.category == Category.中成药与西药)
+                    {
+                        p = this.record.wprescription;
+                    }
+                    else
+                    {
+                        p = this.record.cprescription;
+                    }
+                    add_item(p, mf.result_medicine, mf.result_amount);
+                }
+            }
+        }
+
+        //从处方中删除一味药品
+        private void del_item(DataGridView dgv, Category c)
+        {
+            if (dgv.CurrentRow == null)
+            {
+                MessageBox.Show("请先选择一项！", "提示信息");
+            }
+            else if (MessageBox.Show("是否确认删除？", "确认信息", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                int index = dgv.CurrentRow.Index;
+                Item i = ((List<Item>)dgv.DataSource)[index];
+                Prescription p;
+                if (c == Category.中成药与西药)
+                {
+                    p = this.record.wprescription;
+                }
+                else
+                {
+                    p = this.record.cprescription;
+                }
+                p.items.Remove(i);
+                p.price -= i.小计;
+                db.SaveChanges();
+                set_prescriptions();
+            }
+
+        }
+
+        //点击西药添加按钮
+        private void button3_Click(object sender, EventArgs e)
+        {
+            start_add_item(Category.中成药与西药);
+        }
+
+        //点击西药删除按钮
+        private void button4_Click(object sender, EventArgs e)
+        {
+            del_item(dataGridView3, Category.中成药与西药);
+        }
+
+        //点击中药添加按钮
+        private void button5_Click(object sender, EventArgs e)
+        {
+            start_add_item(Category.中药);
+        }
+
+        //点击中药删除按钮
+        private void button6_Click(object sender, EventArgs e)
+        {
+            del_item(dataGridView4, Category.中药);
+        }
+
         //导入模板
+        public void import_template(Template t)
+        {
+            //将模板中的每一味药添加到中药处方即可
+            foreach (TemplateItem titem in t.items)
+            {
+                add_item(this.record.cprescription, titem.药品, titem.数量);
+            }
+            db.SaveChanges();
+            set_prescriptions();
+        }
+
+        //点击导入模板按钮
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (dataGridView5.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("请先选择模板", "提示信息");
+            }
+            else
+            {
+                Template t = (Template)dataGridView5.SelectedRows[0].DataBoundItem;
+                import_template(t);
+                MessageBox.Show("导入成功！", "提示信息");
+            }
+        }
+
+        //点击更多模板按钮，打开模板窗口进行选择
         private void button8_Click(object sender, EventArgs e)
         {
             if (this.record == null)
@@ -724,6 +812,7 @@ namespace E_Diagnosis
                 MessageBox.Show("请先选择病人与病历！", "提示信息");
                 return;
             }
+            //打开模板窗口进行选择
             TemplateForm tf = new TemplateForm(db);
             tf.ShowDialog();
             set_recommendations();
@@ -737,6 +826,7 @@ namespace E_Diagnosis
 
 
         /*-----------预览页面的操作-------------*/
+
         //生成打印预览
         private void button12_Click(object sender, EventArgs e)
         {
@@ -754,6 +844,7 @@ namespace E_Diagnosis
             List<Prescription> cp = new List<Prescription>();
             cp.Add(this.record.cprescription);
             reportViewer1.LocalReport.DataSources.Clear();
+            //将需要的信息传入模板
             reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("patient", p));
             reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("record", r));
             reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("wp", wp));
@@ -764,53 +855,6 @@ namespace E_Diagnosis
             settings.Add(Properties.Settings.Default);
             reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("settings", settings));
             reportViewer1.RefreshReport();
-        }
-
-        //双击修改已添加的西药中成药
-        private void dataGridView3_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0)
-                return;
-            Item item = (Item)dataGridView3.Rows[e.RowIndex].DataBoundItem;
-            new MedicineEditForm(item).ShowDialog();
-            db.SaveChanges();
-            set_prescriptions();
-        }
-
-        private void dataGridView4_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0)
-                return;
-            Item item = (Item)dataGridView4.Rows[e.RowIndex].DataBoundItem;
-            new MedicineEditForm(item).ShowDialog();
-            db.SaveChanges();
-            set_prescriptions();
-        }
-
-        //导入选中的推荐模板
-        private void button7_Click(object sender, EventArgs e)
-        {
-            if (dataGridView5.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("请先选择模板", "提示信息");
-            }
-            else
-            {
-                Template t = (Template)dataGridView5.SelectedRows[0].DataBoundItem;
-                import_template(t);
-                MessageBox.Show("导入成功！", "提示信息");
-            }
-        }
-
-        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            NewPasswordForm npf = new NewPasswordForm();
-            npf.ShowDialog();
-            if (npf.newpassword != null)
-            {
-                ((SQLiteConnection)db.Database.Connection).ChangePassword(npf.newpassword);
-                MessageBox.Show("修改密码成功！", "提示信息");
-            }
         }
     }
 }

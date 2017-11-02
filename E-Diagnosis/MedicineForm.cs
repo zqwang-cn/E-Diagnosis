@@ -7,17 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
 
 namespace E_Diagnosis
 {
     public partial class MedicineForm : Form
     {
         private DiagnosisContext db;
+        //药品列表
         private List<Medicine> l;
+        //当前选择的药品序号
         private int selected;
+        //用于返回的药品与数量
         public Medicine result_medicine = null;
         public decimal result_amount = 0;
 
+        //主窗口新建本窗口，并传入要查看的药品类型（也可以为空）
         public MedicineForm(DiagnosisContext db, Category c)
         {
             InitializeComponent();
@@ -26,10 +31,11 @@ namespace E_Diagnosis
             comboBox1.SelectedItem = c;
         }
 
+        //刷新窗口，重置所有药品
         private void refresh()
         {
             IEnumerable<Medicine> query = from medicine in db.medicine_set
-                                          where (textBox1.Text=="" || medicine.名称.Contains(textBox1.Text)) && medicine.category == (Category)comboBox1.SelectedItem
+                                          where medicine.名称.Contains(textBox1.Text) && medicine.category == (Category)comboBox1.SelectedItem
                                           select medicine;
             l = query.ToList();
             dataGridView1.DataSource = l;
@@ -42,21 +48,25 @@ namespace E_Diagnosis
             numericUpDown1.Value = 0.10M;
         }
 
+        //窗口载入时刷新窗口
         private void MedicineForm_Load(object sender, EventArgs e)
         {
             refresh();
         }
 
+        //选择类型时刷新窗口
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             refresh();
         }
 
+        //筛选条件改变时刷新窗口
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             refresh();
         }
 
+        //选择一个药品时显示它的内容
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             selected = e.RowIndex;
@@ -69,6 +79,7 @@ namespace E_Diagnosis
             numericUpDown1.Value = l[selected].价格;
         }
 
+        //添加药品
         private void button1_Click(object sender, EventArgs e)
         {
             if (textBox2.Text.Trim() == "")
@@ -92,6 +103,7 @@ namespace E_Diagnosis
             }
         }
 
+        //修改药品
         private void button2_Click(object sender, EventArgs e)
         {
             if (selected == -1)
@@ -117,6 +129,7 @@ namespace E_Diagnosis
             }
         }
 
+        //删除药品
         private void button3_Click(object sender, EventArgs e)
         {
             if (selected == -1)
@@ -131,12 +144,14 @@ namespace E_Diagnosis
             }
         }
 
+        //如果用于选择药品添加到处方
         private void button4_Click(object sender, EventArgs e)
         {
             if (selected == -1)
             {
                 MessageBox.Show("请先选择一项！", "提示信息");
             }
+            //保存并返回
             else
             {
                 this.result_medicine = l[selected];

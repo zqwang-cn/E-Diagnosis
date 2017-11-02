@@ -13,19 +13,23 @@ namespace E_Diagnosis
     public partial class TemplateForm : Form
     {
         private DiagnosisContext db;
+        //当前模板
         private Template template;
+        //用于返回的模板
         public Template selected_template;
 
+        //主窗口新建此窗口，传入数据库
         public TemplateForm(DiagnosisContext db)
         {
             InitializeComponent();
             this.db = db;
         }
 
+        //重新载入所有模板
         private void refresh()
         {
             IEnumerable<Template> query = from template in db.template_set
-                                          where (textBox5.Text=="" || template.名称.Contains(textBox5.Text)) && (textBox7.Text=="" || template.主治.Contains(textBox7.Text)) && (textBox8.Text=="" || template.备注.Contains(textBox8.Text))
+                                          where template.名称.Contains(textBox5.Text) && template.主治.Contains(textBox7.Text) && template.备注.Contains(textBox8.Text)
                                           select template;
             dataGridView1.DataSource = query.ToList();
             dataGridView1.Columns[0].Visible = false;
@@ -39,6 +43,7 @@ namespace E_Diagnosis
             set_template();
         }
 
+        //显示一个模板的所有药品
         private void set_items()
         {
             dataGridView2.DataSource = this.template.items.ToList();
@@ -46,6 +51,7 @@ namespace E_Diagnosis
             dataGridView2.Columns[1].Visible = false;
         }
 
+        //显示一个模板
         private void set_template()
         {
             textBox1.Text = this.template.名称;
@@ -56,27 +62,31 @@ namespace E_Diagnosis
             set_items();
         }
 
+        //窗口载入时刷新
         private void TemplateForm_Load(object sender, EventArgs e)
         {
             refresh();
         }
 
+        //筛选条件修改时刷新
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
             refresh();
         }
 
+        //筛选条件修改时刷新
         private void textBox7_TextChanged(object sender, EventArgs e)
         {
             refresh();
         }
 
+        //筛选条件修改时刷新
         private void textBox8_TextChanged(object sender, EventArgs e)
         {
             refresh();
         }
 
-        //新建模板
+        //新建模板(直接刷新，将所有内容置为空
         private void button6_Click(object sender, EventArgs e)
         {
             refresh();
@@ -113,13 +123,15 @@ namespace E_Diagnosis
             refresh();
         }
 
-        //选择模板
+        //点击一个模板时
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
+            //如果未选中（点击行间空白有时候会出现），显示一个空模板
             if (dataGridView1.SelectedRows.Count == 0)
             {
                 this.template = new Template();
             }
+            //显示选中的模板内容
             else
             {
                 this.template = (Template)dataGridView1.SelectedRows[0].DataBoundItem;
@@ -130,8 +142,10 @@ namespace E_Diagnosis
         //添加药品
         private void button3_Click(object sender, EventArgs e)
         {
+            //打开药品编辑窗口进行选择
             MedicineForm mf = new MedicineForm(db, Category.中药);
             mf.ShowDialog();
+            //如果选择了一个药品则添加到模板中
             if (mf.result_medicine != null)
             {
                 TemplateItem item = new TemplateItem();
@@ -146,10 +160,12 @@ namespace E_Diagnosis
         //删除药品
         private void button4_Click(object sender, EventArgs e)
         {
+            //确认
             if (dataGridView2.SelectedRows.Count == 0)
             {
                 MessageBox.Show("请选择要删除的药品！", "提示信息");
             }
+            //删除并刷新
             else if(MessageBox.Show("是否确认删除？", "确认信息", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 this.template.items.Remove((TemplateItem)dataGridView2.SelectedRows[0].DataBoundItem);
@@ -158,12 +174,14 @@ namespace E_Diagnosis
             }
         }
 
+        //本窗口用于导入模板时，点击选择按钮
         private void button5_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count == 0)
             {
                 MessageBox.Show("请选择模板！", "提示信息");
             }
+            //选中则保存并返回
             else
             {
                 this.selected_template = (Template)dataGridView1.SelectedRows[0].DataBoundItem;
