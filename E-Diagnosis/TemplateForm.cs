@@ -12,8 +12,9 @@ namespace E_Diagnosis
 {
     public partial class TemplateForm : Form
     {
+        //数据库
         private DiagnosisContext db;
-        //当前模板
+        //当前选中的模板
         private Template template;
         //用于返回的模板
         public Template selected_template;
@@ -28,6 +29,7 @@ namespace E_Diagnosis
         //重新载入所有模板
         private void refresh()
         {
+            //根据搜索条件查找所有模板并显示
             IEnumerable<Template> query = from template in db.template_set
                                           where template.名称.Contains(textBox5.Text) && template.主治.Contains(textBox7.Text) && template.备注.Contains(textBox8.Text)
                                           select template;
@@ -86,7 +88,7 @@ namespace E_Diagnosis
             refresh();
         }
 
-        //新建模板(直接刷新，将所有内容置为空
+        //新建模板(直接刷新，将所有内容置为空）
         private void button6_Click(object sender, EventArgs e)
         {
             refresh();

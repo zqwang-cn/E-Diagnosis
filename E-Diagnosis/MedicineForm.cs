@@ -13,6 +13,7 @@ namespace E_Diagnosis
 {
     public partial class MedicineForm : Form
     {
+        //数据库
         private DiagnosisContext db;
         //药品列表
         private List<Medicine> l;
@@ -22,7 +23,7 @@ namespace E_Diagnosis
         public Medicine result_medicine = null;
         public decimal result_amount = 0;
 
-        //主窗口新建本窗口，并传入要查看的药品类型（也可以为空）
+        //主窗口新建本窗口，并传入数据库与要查看的药品类型（也可以为空）
         public MedicineForm(DiagnosisContext db, Category c)
         {
             InitializeComponent();
@@ -34,6 +35,7 @@ namespace E_Diagnosis
         //刷新窗口，重置所有药品
         private void refresh()
         {
+            //根据搜索条件查找药品并显示
             IEnumerable<Medicine> query = from medicine in db.medicine_set
                                           where medicine.名称.Contains(textBox1.Text) && medicine.category == (Category)comboBox1.SelectedItem
                                           select medicine;
@@ -144,14 +146,14 @@ namespace E_Diagnosis
             }
         }
 
-        //如果用于选择药品添加到处方
+        //点击选择药品按钮
         private void button4_Click(object sender, EventArgs e)
         {
             if (selected == -1)
             {
                 MessageBox.Show("请先选择一项！", "提示信息");
             }
-            //保存并返回
+            //保存选中的药品用于返回
             else
             {
                 this.result_medicine = l[selected];

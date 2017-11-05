@@ -31,10 +31,12 @@ namespace E_Diagnosis
     public class Medicine
     {
         public int id { get; set; }
+        //药材种类
         public Category category { get; set; }
         public string 名称 { get; set; }
         public string 规格 { get; set; }
         public decimal 价格 { get; set; }
+        //用于显示
         public override string ToString()
         {
             return this.名称;
@@ -163,12 +165,12 @@ namespace E_Diagnosis
 
     public class DiagnosisContext:DbContext
     {
-        //打开数据库时需要在connection里传入密码
+        //必须，调用了父类的构造函数，使用connection里的密码打开数据库
         public DiagnosisContext(DbConnection connection) : base(connection, true)
         {
 
         }
-        //定义病人表、药品表、模板表可以直接访问，其它表通过这三个表的外键访问
+        //定义病人表、药品表、模板表，此处定义才可以直接访问，其它表通过这三个表间接访问
         public DbSet<Medicine> medicine_set { get; set; }
         public DbSet<Patient> patient_set { get; set; }
         public DbSet<Template> template_set { get; set; }

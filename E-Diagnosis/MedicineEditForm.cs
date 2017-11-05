@@ -12,6 +12,7 @@ namespace E_Diagnosis
 {
     public partial class MedicineEditForm : Form
     {
+        //要编辑的药品
         private Item item;
 
         //新建窗口时，将要修改的处方项传入

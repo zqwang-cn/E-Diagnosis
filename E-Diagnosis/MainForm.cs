@@ -25,6 +25,7 @@ namespace E_Diagnosis
         public MainForm()
         {
             InitializeComponent();
+            //初始化combobox
             comboBox1.SelectedIndex = 0;
             comboBox2.SelectedIndex = 0;
             comboBox7.SelectedIndex = 0;
@@ -32,6 +33,7 @@ namespace E_Diagnosis
             comboBox4.SelectedIndex = 0;
             comboBox3.SelectedIndex = 0;
             comboBox6.SelectedIndex = 0;
+            //初始化预览窗口
             reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
             reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
         }
@@ -39,10 +41,12 @@ namespace E_Diagnosis
         //刷新用户列表
         private void refresh()
         {
+            //根据搜索条件查找所有病人（默认为所有）
             IEnumerable<Patient> query = from patient in db.patient_set
                                          where patient.编号.Contains(textBox1.Text) && patient.姓名.Contains(textBox2.Text)
                                          select patient;
             l = query.ToList();
+            //显示为列表，并隐藏不需要的项
             dataGridView1.DataSource = l;
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[5].Visible = false;
@@ -59,6 +63,7 @@ namespace E_Diagnosis
             dataGridView1.Columns[16].Visible = false;
             dataGridView1.Columns[17].Visible = false;
             dataGridView1.ClearSelection();
+            //如果当前选中了一个病人，在改变搜索条件后，如果仍在列表中，则将其选中
             if (this.patient != null)
             {
                 
@@ -87,16 +92,17 @@ namespace E_Diagnosis
             //打开密码输入窗口获取密码
             PasswordForm pf = new PasswordForm();
             pf.ShowDialog();
+            //如果点击退出则直接退出
             if (pf.password == null)
             {
                 Application.Exit();
             }
-            //使用密码打开数据库
+            //使用密码打开数据库，此时无法判断密码是否正确
             string cstring = String.Format("Data Source=E-Diagnosis.db;Password={0};", pf.password);
             SQLiteConnection connection= new SQLiteConnection(cstring);
             connection.Open();
             db = new DiagnosisContext(connection);
-            //刷新所有病人
+            //刷新所有病人，进行第一次数据库操作时才能判断密码是否正确
             try
             {
                 refresh();
@@ -135,6 +141,7 @@ namespace E_Diagnosis
                 dataGridView4.Columns[1].Visible = false;
                 dataGridView4.Columns[2].Visible = false;
 
+                //总价
                 label48.Text = (this.record.wprescription.price + this.record.cprescription.price * this.record.cprescription.amount).ToString() + "元";
             }
             //否则清空处方
@@ -152,11 +159,12 @@ namespace E_Diagnosis
         //显示推荐药方
         private void set_recommendations()
         {
+            //如果当前未选中病历，则返回
             if (this.record == null)
             {
                 return;
             }
-            //将主诉拆分为关键词搜索模板
+            //将主诉拆分为关键词用于搜索模板
             string[] keywords = this.record.主诉.Split(separator);
             var query = from template in db.template_set
                         where keywords.Any(keyword => keyword != "" && template.keywords.Contains(keyword))
@@ -177,6 +185,7 @@ namespace E_Diagnosis
         private void set_record(Record r)
         {
             this.record = r;
+            //如果为空则清空
             if (r == null)
             {
                 comboBox2.SelectedIndex = 0;
@@ -200,6 +209,7 @@ namespace E_Diagnosis
                 textBox26.Text = "";
                 dataGridView5.DataSource = null;
             }
+            //不为空则显示内容
             else
             {
                 comboBox2.SelectedItem = r.类型;
@@ -222,14 +232,17 @@ namespace E_Diagnosis
                 textBox25.Text = r.核对;
                 textBox26.Text = r.发药;
 
+                //并设置推荐模板
                 set_recommendations();
             }
+            //并显示该病历的处方
             set_prescriptions();
         }
 
         //显示当前选中病人的所有病历
         private void set_records()
         {
+            //如果当前未选中病人则清空病历
             if (this.patient == null)
             {
                 dataGridView2.DataSource = new List<Record>();
@@ -246,6 +259,7 @@ namespace E_Diagnosis
                 dataGridView2.Columns[22].Visible = false;
                 set_record(null);
             }
+            //如果已选中病人则显示该病人的所有病历
             else
             {
                 dataGridView2.DataSource = this.patient.records.ToList();
@@ -260,7 +274,7 @@ namespace E_Diagnosis
                 dataGridView2.Columns[20].Visible = false;
                 dataGridView2.Columns[21].Visible = false;
                 dataGridView2.Columns[22].Visible = false;
-                //如果在修改一条病历后进入此函数，则仍然显示此条病历
+                //如果之前已经选中其中一条病历，则仍然设置为选中状态
                 if (this.record != null && this.record.patient == this.patient)
                 {
                     foreach (DataGridViewRow row in dataGridView2.Rows)
@@ -273,7 +287,7 @@ namespace E_Diagnosis
                         }
                     }
                 }
-                //如果在其它情况下进入，则显示最后一条记录
+                //如果之前没有选中任何病历，则默认选中最后一条
                 else
                 {
                     if (dataGridView2.Rows.Count > 0)
@@ -331,6 +345,7 @@ namespace E_Diagnosis
                 textBox4.Text = p.电话;
                 textBox15.Text = p.过敏史;
             }
+            //之后显示该病人所有病历
             set_records();
         }
 
@@ -361,6 +376,7 @@ namespace E_Diagnosis
         {
             NewPasswordForm npf = new NewPasswordForm();
             npf.ShowDialog();
+            //如果确定修改，则对数据库文件进行修改并显示成功信息
             if (npf.newpassword != null)
             {
                 ((SQLiteConnection)db.Database.Connection).ChangePassword(npf.newpassword);
@@ -425,7 +441,7 @@ namespace E_Diagnosis
                 db.SaveChanges();
                 set_patient(patient);
             }
-            //否则修改并保存
+            //否则修改当前病人并保存
             else
             {
                 this.patient.费别 = (string)comboBox3.SelectedItem;
@@ -479,7 +495,7 @@ namespace E_Diagnosis
                 button11_Click(sender, e);
                 return;
             }
-            //复制当前病历
+            //复制当前病历（深拷贝）
             Record lr = ((List<Record>)this.patient.records)[this.patient.records.Count - 1];
             Record r = new Record();
             this.patient.records.Add(r);
@@ -541,11 +557,13 @@ namespace E_Diagnosis
         //保存病历
         private void button2_Click(object sender, EventArgs e)
         {
+            //当前病人不能为空
             if (this.patient == null)
             {
                 MessageBox.Show("请先选择病人！", "提示信息");
                 return;
             }
+            //如果当前病历为空，新建并保存
             if (this.record == null)
             {
                 Record r = new Record();
@@ -600,10 +618,10 @@ namespace E_Diagnosis
                 }
                 this.patient.records.Add(r);
             }
+            //否则修改并保存
             else
             {
                 Record r = this.record;
-                //r.patient = this.patient;
                 r.类型 = (string)comboBox2.SelectedItem;
                 r.科别 = (string)comboBox7.SelectedItem;
                 r.就诊日期 = dateTimePicker1.Value;
@@ -625,6 +643,7 @@ namespace E_Diagnosis
                 r.发药 = textBox26.Text;
             }
             db.SaveChanges();
+            //刷新病历列表
             set_records();
             MessageBox.Show("保存成功！", "提示信息");
 
@@ -671,7 +690,7 @@ namespace E_Diagnosis
             bool found = false;
             foreach (Item item in pre.items)
             {
-                //如果该药品已经存在于处方中，则把数量添加到其中
+                //如果该药品已经存在于处方中，则把数量增加
                 if (item.medicine == medicine && item.名称 == medicine.名称 && item.单价 == medicine.价格)
                 {
                     item.数量 += amount;
@@ -701,16 +720,19 @@ namespace E_Diagnosis
         //点击按钮，打开药品窗口，让用户选择一味药品进行添加
         private void start_add_item(Category c)
         {
+            //当前病历不能为空
             if (this.record == null)
             {
                 MessageBox.Show("请先选择病人与病历！", "提示信息");
             }
             else
             {
+                //打开药品选择窗口
                 MedicineForm mf = new MedicineForm(this.db, c);
                 mf.ShowDialog();
                 if (mf.result_medicine != null)
                 {
+                    //根据选择的药品类型确定要添加的处方
                     Prescription p;
                     if (mf.result_medicine.category == Category.中成药与西药)
                     {
@@ -720,6 +742,7 @@ namespace E_Diagnosis
                     {
                         p = this.record.cprescription;
                     }
+                    //向该处方中添加选择的药品
                     add_item(p, mf.result_medicine, mf.result_amount);
                 }
             }
@@ -736,6 +759,7 @@ namespace E_Diagnosis
             {
                 int index = dgv.CurrentRow.Index;
                 Item i = ((List<Item>)dgv.DataSource)[index];
+                //确定要删除的药品所属处方
                 Prescription p;
                 if (c == Category.中成药与西药)
                 {
@@ -745,6 +769,7 @@ namespace E_Diagnosis
                 {
                     p = this.record.cprescription;
                 }
+                //删除该药品并从总价中扣除
                 p.items.Remove(i);
                 p.price -= i.小计;
                 db.SaveChanges();
@@ -817,6 +842,7 @@ namespace E_Diagnosis
             tf.ShowDialog();
             set_recommendations();
             Template t = tf.selected_template;
+            //如果选择了模板则导入
             if (t != null)
             {
                 import_template(t);
@@ -835,6 +861,7 @@ namespace E_Diagnosis
                 MessageBox.Show("请先选择病人与病历！", "提示信息");
                 return;
             }
+            //初始化
             List<Record> r = new List<Record>();
             r.Add(this.record);
             List<Patient> p = new List<Patient>();
@@ -854,6 +881,7 @@ namespace E_Diagnosis
             List<Properties.Settings> settings = new List<Properties.Settings>();
             settings.Add(Properties.Settings.Default);
             reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("settings", settings));
+            //刷新预览窗口
             reportViewer1.RefreshReport();
         }
     }
