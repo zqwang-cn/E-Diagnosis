@@ -23,7 +23,7 @@ namespace E_Diagnosis
     //定义药材的种类
     public enum Category
     {
-        中成药与西药,
+        中成药,
         中药,
     }
 
@@ -100,6 +100,7 @@ namespace E_Diagnosis
         public virtual Prescription wprescription { get; set; }
         //中药处方
         public virtual Prescription cprescription { get; set; }
+        public string 服用方法 { get; set; }
     }
 
     //处方表
@@ -133,6 +134,7 @@ namespace E_Diagnosis
         public decimal 数量 { get; set; }
         public decimal 单价 { get; set; }
         public decimal 小计 { get; set; }
+        public string 规格 { get; set; }
     }
 
     //模板表
@@ -159,8 +161,10 @@ namespace E_Diagnosis
         public int id { get; set; }
         //对应模板
         public virtual Template template { get; set; }
-        public virtual Medicine 药品 { get; set; }
+        public virtual string 药品 { get; set; }
         public decimal 数量 { get; set; }
+        public virtual Medicine medicine { get; set; }
+        public string 规格 { get; set; }
     }
 
     public class DiagnosisContext:DbContext
@@ -168,7 +172,6 @@ namespace E_Diagnosis
         //必须，调用了父类的构造函数，使用connection里的密码打开数据库
         public DiagnosisContext(DbConnection connection) : base(connection, true)
         {
-
         }
         //定义病人表、药品表、模板表，此处定义才可以直接访问，其它表通过这三个表间接访问
         public DbSet<Medicine> medicine_set { get; set; }

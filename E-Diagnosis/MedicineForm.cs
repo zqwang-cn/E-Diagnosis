@@ -40,14 +40,24 @@ namespace E_Diagnosis
                                           where medicine.名称.Contains(textBox1.Text) && medicine.category == (Category)comboBox1.SelectedItem
                                           select medicine;
             l = query.ToList();
+            if (dataGridView1.Columns["delete"] != null)
+            {
+                dataGridView1.Columns.Remove("delete");
+            }
             dataGridView1.DataSource = l;
+            DataGridViewButtonColumn bc = new DataGridViewButtonColumn();
+            bc.Text = "删除";
+            bc.Name = "delete";
+            bc.HeaderText = "";
+            bc.UseColumnTextForButtonValue = true;
+            dataGridView1.Columns.Add(bc);
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].Visible = false;
             dataGridView1.ClearSelection();
             selected = -1;
-            textBox2.Text = "";
-            textBox3.Text = "";
-            numericUpDown1.Value = 0.10M;
+            //textBox2.Text = "";
+            //textBox3.Text = "";
+            //numericUpDown1.Value = 0.10M;
         }
 
         //窗口载入时刷新窗口
@@ -68,98 +78,129 @@ namespace E_Diagnosis
             refresh();
         }
 
-        //选择一个药品时显示它的内容
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            selected = e.RowIndex;
-            if (selected < 0 || selected > l.Count)
-            {
-                return;
-            }
-            textBox2.Text = l[selected].名称;
-            textBox3.Text = l[selected].规格;
-            numericUpDown1.Value = l[selected].价格;
-        }
+        ////选择一个药品时显示它的内容
+        //private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    selected = e.RowIndex;
+        //    if (selected < 0 || selected > l.Count)
+        //    {
+        //        return;
+        //    }
+        //    textBox2.Text = l[selected].名称;
+        //    textBox3.Text = l[selected].规格;
+        //    numericUpDown1.Value = l[selected].价格;
+        //}
 
         //添加药品
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox2.Text.Trim() == "")
+            //if (textBox2.Text.Trim() == "")
+            //{
+            //    MessageBox.Show("品名不能为空！", "提示信息");
+            //}
+            //else if (textBox3.Text.Trim() == "")
+            //{
+            //    MessageBox.Show("规格不能为空！", "提示信息");
+            //}
+            //else
+            //{
+            //    Medicine medicine = new Medicine();
+            //    medicine.category = (Category)comboBox1.SelectedItem;
+            //    medicine.名称 = textBox2.Text;
+            //    medicine.规格 = textBox3.Text;
+            //    medicine.价格 = decimal.Round(numericUpDown1.Value + 0.00M, 2);
+            //    db.medicine_set.Add(medicine);
+            //    db.SaveChanges();
+            //    refresh();
+            //}
+            Medicine medicine = new Medicine();
+            medicine.category = (Category)comboBox1.SelectedItem;
+            medicine.名称 = "新建药品";
+            medicine.规格 = "";
+            medicine.价格 = 0.00M;
+            db.medicine_set.Add(medicine);
+            db.SaveChanges();
+            refresh();
+            dataGridView1.Rows[dataGridView1.RowCount - 1].Selected = true;
+            dataGridView1.FirstDisplayedScrollingRowIndex = dataGridView1.RowCount - 1;
+        }
+
+        ////修改药品
+        //private void button2_Click(object sender, EventArgs e)
+        //{
+        //    if (selected == -1)
+        //    {
+        //        MessageBox.Show("请先选择一项！", "提示信息");
+        //    }
+        //    else if (textBox2.Text.Trim() == "")
+        //    {
+        //        MessageBox.Show("品名不能为空！", "提示信息");
+        //    }
+        //    else if (textBox3.Text.Trim() == "")
+        //    {
+        //        MessageBox.Show("规格不能为空！", "提示信息");
+        //    }
+        //    else
+        //    {
+        //        Medicine medicine = l[selected];
+        //        medicine.名称 = textBox2.Text;
+        //        medicine.规格 = textBox3.Text;
+        //        medicine.价格 = decimal.Round(numericUpDown1.Value + 0.00M, 2);
+        //        db.SaveChanges();
+        //        refresh();
+        //    }
+        //}
+
+        ////删除药品
+        //private void button3_Click(object sender, EventArgs e)
+        //{
+        //    if (selected == -1)
+        //    {
+        //        MessageBox.Show("请先选择一项！", "提示信息");
+        //    }
+        //    else if (MessageBox.Show("是否确认删除？", "确认信息", MessageBoxButtons.YesNo) == DialogResult.Yes)
+        //    {
+        //        db.medicine_set.Remove(l[selected]);
+        //        db.SaveChanges();
+        //        refresh();
+        //    }
+        //}
+
+        //修改内容之后自动保存
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            db.SaveChanges();
+        }
+
+        //点击删除按钮
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && dataGridView1.Columns[e.ColumnIndex].Name == "delete")
             {
-                MessageBox.Show("品名不能为空！", "提示信息");
-            }
-            else if (textBox3.Text.Trim() == "")
-            {
-                MessageBox.Show("规格不能为空！", "提示信息");
-            }
-            else
-            {
-                Medicine medicine = new Medicine();
-                medicine.category = (Category)comboBox1.SelectedItem;
-                medicine.名称 = textBox2.Text;
-                medicine.规格 = textBox3.Text;
-                medicine.价格 = decimal.Round(numericUpDown1.Value + 0.00M, 2);
-                db.medicine_set.Add(medicine);
-                db.SaveChanges();
-                refresh();
+                if (MessageBox.Show("是否确认删除？", "确认信息", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    Medicine m = (Medicine)dataGridView1.CurrentRow.DataBoundItem;
+                    db.medicine_set.Remove(m);
+                    db.SaveChanges();
+                    refresh();
+                }
             }
         }
 
-        //修改药品
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (selected == -1)
-            {
-                MessageBox.Show("请先选择一项！", "提示信息");
-            }
-            else if (textBox2.Text.Trim() == "")
-            {
-                MessageBox.Show("品名不能为空！", "提示信息");
-            }
-            else if (textBox3.Text.Trim() == "")
-            {
-                MessageBox.Show("规格不能为空！", "提示信息");
-            }
-            else
-            {
-                Medicine medicine = l[selected];
-                medicine.名称 = textBox2.Text;
-                medicine.规格 = textBox3.Text;
-                medicine.价格 = decimal.Round(numericUpDown1.Value + 0.00M, 2);
-                db.SaveChanges();
-                refresh();
-            }
-        }
-
-        //删除药品
-        private void button3_Click(object sender, EventArgs e)
-        {
-            if (selected == -1)
-            {
-                MessageBox.Show("请先选择一项！", "提示信息");
-            }
-            else if (MessageBox.Show("是否确认删除？", "确认信息", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                db.medicine_set.Remove(l[selected]);
-                db.SaveChanges();
-                refresh();
-            }
-        }
-
-        //点击选择药品按钮
-        private void button4_Click(object sender, EventArgs e)
-        {
-            if (selected == -1)
-            {
-                MessageBox.Show("请先选择一项！", "提示信息");
-            }
-            //保存选中的药品用于返回
-            else
-            {
-                this.result_medicine = l[selected];
-                this.result_amount = decimal.Round(numericUpDown2.Value + 0.0M, 1);
-                this.Close();
-            }
-        }
+        ////点击选择药品按钮
+        //private void button4_Click(object sender, EventArgs e)
+        //{
+        //    if (selected == -1)
+        //    {
+        //        MessageBox.Show("请先选择一项！", "提示信息");
+        //    }
+        //    //保存选中的药品用于返回
+        //    else
+        //    {
+        //        this.result_medicine = l[selected];
+        //        this.result_amount = decimal.Round(numericUpDown2.Value + 0.0M, 1);
+        //        this.Close();
+        //    }
+        //}
     }
 }
