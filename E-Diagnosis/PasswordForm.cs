@@ -31,5 +31,15 @@ namespace E_Diagnosis
         {
             this.Close();
         }
+
+        //回车，保存密码并关闭窗口
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.password = textBox1.Text;
+                this.Close();
+            }
+        }
     }
 }

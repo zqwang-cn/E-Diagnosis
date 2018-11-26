@@ -87,11 +87,11 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(235, 18);
+            this.label1.Location = new System.Drawing.Point(247, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 12);
+            this.label1.Size = new System.Drawing.Size(41, 12);
             this.label1.TabIndex = 0;
-            this.label1.Text = "搜索品名：";
+            this.label1.Text = "搜索：";
             // 
             // tableLayoutPanel1
             // 
@@ -148,7 +148,8 @@
             this.ClientSize = new System.Drawing.Size(525, 433);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "MedicineForm";
-            this.Text = "药品编辑";
+            this.Text = "药材编辑";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MedicineForm_FormClosed);
             this.Load += new System.EventHandler(this.MedicineForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);

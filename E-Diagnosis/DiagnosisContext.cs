@@ -33,9 +33,10 @@ namespace E_Diagnosis
         public int id { get; set; }
         //药材种类
         public Category category { get; set; }
-        public string 名称 { get; set; }
-        public string 规格 { get; set; }
-        public decimal 价格 { get; set; }
+        public string 名称 { get; set; } = "新建药品";
+        public string 简拼 { get; set; } = "";
+        public string 规格 { get; set; } = "";
+        public decimal 价格 { get; set; } = 0;
         //用于显示
         public override string ToString()
         {
@@ -52,21 +53,21 @@ namespace E_Diagnosis
         }
         public int id { get; set; }
         public string 编号 { get; set; }
-        public string 姓名 { get; set; }
-        public string 性别 { get; set; }
-        public decimal 年龄 { get; set; }
-        public decimal 体重 { get; set; }
-        public string 费别 { get; set; }
-        public string 医保卡号 { get; set; }
-        public string 民族 { get; set; }
-        public string 血型 { get; set; }
-        public string 籍贯 { get; set; }
-        public string 职业 { get; set; }
-        public string 婚姻 { get; set; }
-        public string 身份证号 { get; set; }
-        public string 住址 { get; set; }        
-        public string 电话 { get; set; }
-        public string 过敏史 { get; set; }
+        public string 姓名 { get; set; } = "新病人";
+        public string 性别 { get; set; } = "";
+        public decimal 年龄 { get; set; } = 0;
+        public decimal 体重 { get; set; } = 0;
+        public string 费别 { get; set; } = "";
+        public string 医保卡号 { get; set; } = "";
+        public string 民族 { get; set; } = "";
+        public string 血型 { get; set; } = "";
+        public string 籍贯 { get; set; } = "";
+        public string 职业 { get; set; } = "";
+        public string 婚姻 { get; set; } = "";
+        public string 身份证号 { get; set; } = "";
+        public string 住址 { get; set; } = "";
+        public string 电话 { get; set; } = "";
+        public string 过敏史 { get; set; } = "";
         //所有病历列表
         public virtual ICollection<Record> records { get; set; }
     }
@@ -77,30 +78,28 @@ namespace E_Diagnosis
         public int id { get; set; }
         //对应病人（数据库中为外键）
         public virtual Patient patient { get; set; }
-        public string 类型 { get; set; }
-        public string 科别 { get; set; }
-        public DateTime 就诊日期 { get; set; }
-        public string 主诉 { get; set; }
-        public string 现病史 { get; set; }
-        public string 既往史 { get; set; }
-        public string 个人史 { get; set; }
-        public string 家族史 { get; set; }
-        public string 月经及婚育史 { get; set; }
-        public string 体格检查 { get; set; }
-        public string 辅助检查 { get; set; }
-        public string 临床诊断 { get; set; }
-        public string 治疗意见 { get; set; }
-        public string 说明 { get; set; }
-        public string 医师 { get; set; }
-        public string 调配 { get; set; }
-        public string 审核 { get; set; }
-        public string 核对 { get; set; }
-        public string 发药 { get; set; }
+        public string 类型 { get; set; } = "初诊";
+        public string 科别 { get; set; } = "";
+        public DateTime 就诊日期 { get; set; } = DateTime.Now;
+        public string 服用方法 { get; set; } = "";
+        public string 煎法 { get; set; } = "";
+        public string 主诉 { get; set; } = "";
+        public string 诊断 { get; set; } = "";
+        public string 医嘱 { get; set; } = "";
+        public string 治疗意见 { get; set; } = "";
+        public string 体格检查 { get; set; } = "";
+        public string 辅助检查 { get; set; } = "";
+        public string 现病史 { get; set; } = "";
+        public string 既往史 { get; set; } = "";
+        public string 个人史 { get; set; } = "";
+        public string 家族史 { get; set; } = "";
+        public string 月经及婚育史 { get; set; } = "";
+        //中药剂数（西药处方不使用）
+        public int amount { get; set; } = 1;
         //西药处方
         public virtual Prescription wprescription { get; set; }
         //中药处方
         public virtual Prescription cprescription { get; set; }
-        public string 服用方法 { get; set; }
     }
 
     //处方表
@@ -112,11 +111,9 @@ namespace E_Diagnosis
         }
         public int id { get; set; }
         //对应处方
-        public Record record { get; set; }
-        //剂数（西药处方不使用）
-        public int amount { get; set; } = 1;
+        public virtual Record record { get; set; }
         //处方价格（一剂）
-        public decimal price { get; set; }
+        public decimal price { get; set; } = 0;
         //所包含的药品内容
         public virtual ICollection<Item> items { get; set; }
     }
@@ -132,9 +129,10 @@ namespace E_Diagnosis
         //此处名称初始从药品库复制，但是可能会修改，修改后不影响药品库
         public string 名称 { get; set; }
         public decimal 数量 { get; set; }
+        public string 规格 { get; set; }
+        public string 煎法 { get; set; } = "";
         public decimal 单价 { get; set; }
         public decimal 小计 { get; set; }
-        public string 规格 { get; set; }
     }
 
     //模板表
@@ -147,12 +145,12 @@ namespace E_Diagnosis
         public int id { get; set; }
         //所包含的药品
         public virtual ICollection<TemplateItem> items { get; set; }
-        public string 名称 { get; set; }
-        public string 功用 { get; set; }
-        public string 主治 { get; set; }
-        public string 备注 { get; set; }
+        public string 名称 { get; set; } = "新模板";
+        public string 功用 { get; set; } = "";
+        public string 主治 { get; set; } = "";
+        public string 备注 { get; set; } = "";
         //关键词
-        public string keywords { get; set; }
+        public string keywords { get; set; } = "";
     }
 
     //模板包含的药品表
